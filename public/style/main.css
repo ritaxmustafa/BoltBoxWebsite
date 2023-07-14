@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Cuprum:wght@600&family=Montserrat:wght@300;600&family=Ubuntu+Mono:wght@700&family=Viga&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Viga", sans-serif;
+}
+:root {
+  --main: #00abd6;
+  --dark-main: #1a4e8a;
+  --light-main:hsl(192, 100%, 42%, 0.07);
+  --white: #ffffff;
+  --black: #0000;
+  --radius-image: 20px;
+  --radius-input:5px;
+  --border-color:#efefef;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+p, h1 {
+  font-weight: 500;
+  margin: 5px 0px;
+}
+img{
+  border-radius: var(--radius-image);
+}
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
+.grid3,
+.grid9 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  column-gap: 5px;
+}
+.grid1{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+}
+.grid2{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  column-gap: 5px;
+}
+.grid4{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+}
+.btn{
+  background-color: var(--main);
+  padding:10px 30px;
+  border-radius: var(--radius-image);
+  color: var(--white);
+  outline: none;
+  border: 1px solid var(--main);
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn:hover{
+  background-color: var(--white);
+  color: var(--main);
+}
+input{
+  padding:10px;
+  outline: none;
+  border-radius: var(--radius-input);
+  border: 1px solid var(--border-color);
+}
+.flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.borderTop{
+  border-top: 1px solid var(--border-color);
+  padding-top: 10px;
+  margin-top: 10px;
+
+}
+.errorMsg{
+  background-color:indianred;
+  color: var(--white);
+  padding:5px;
+  border-radius: 5px;
+  font-size: 15px;
+
+}

@@ -1,0 +1,42 @@
+.checkoutModal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkoutBody{
+  background-color: var(--white);
+  padding:50px;
+  width: 550px;
+  border-radius: var(--radius-image);
+  margin: auto ;
+  text-align: center;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+.checkoutBody p{
+  padding-bottom: 20px;
+}
+.close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--light-main);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 25px;
+  cursor: pointer;
+}
+.checkoutBody a{
+
+}
