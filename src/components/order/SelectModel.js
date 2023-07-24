@@ -5,7 +5,6 @@ import style from "./OrdersComponent.module.css";
 
 function SelectModel(props) {
   const { order, lng } = useSelector((state) => state.global);
-
   return (
     <div className={style.selectModel}>
       <h1>{label[lng][props.data[0].type]}</h1>

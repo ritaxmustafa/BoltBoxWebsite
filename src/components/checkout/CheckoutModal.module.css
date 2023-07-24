@@ -8,11 +8,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 6;
 }
 .checkoutBody{
   background-color: var(--white);
   padding:50px;
-  width: 550px;
+  width: 450px;
   border-radius: var(--radius-image);
   margin: auto ;
   text-align: center;
@@ -22,6 +23,12 @@
 }
 .checkoutBody p{
   padding-bottom: 20px;
+}
+.checkoutBody h1{
+  font-size: 25px;
+}
+.checkoutBody p{
+  font-size: 16px;
 }
 .close{
   position: absolute;
@@ -37,6 +44,10 @@
   font-size: 25px;
   cursor: pointer;
 }
-.checkoutBody a{
-
+@media (max-width: 800px) {
+  .checkoutBody{
+    padding: 30px;
+    width: 80%;
+  }
+  
 }

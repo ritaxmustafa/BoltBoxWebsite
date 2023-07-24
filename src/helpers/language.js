@@ -4,7 +4,6 @@ export const  label = {
     objectNodesc: "Ju lutem zgjedhni numrin e kafshëve në fotografi ",
     frame: "Kornizën e preferuar",
     avatar: "Avatari juaj i preferuar",
-
     black: "E zezë",
     wood: "Druri",
     white: "E bardhë",
@@ -13,9 +12,22 @@ export const  label = {
     uploadFile: "Ju lutem ngarkoni fotografinë",
     allowdImageExtension: "Ju lutem ngarkoni fotografi te formatit jpef, jpg, png ose gif",
     checkoutModalTitle: "Produkti u shtua me sukses! ",
-    checkoutModalDesc: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ",
-    continue: "Continue "
+    checkoutModalDesc: "Ju do te ridrejtoheni tek arka per {{time}} sekonda ",
+    continue: "Continue",
+    min3: "Minimum 3 karaktere",
+    max50: "Maximum 50 karaktere",
+    required: "Ju lutem plotësoni të dhënat",
+    mailError: "Vendosni një email valide!",
+    onlyNumber: "Vendosni një numër valid",
+    onlyLetters: "Vendosni vetëm shkronja",
+    requiredName:"Emri është i domosdoshëm",
+    requiredCountry:"Shteti është i domosdoshëm",
+    requiredCity:"Qyteti është i domosdoshëm",
+    requiredEmail:"Email Adresa është e domosdoshëm",
+    requiredAddress:"Adresa është e domosdoshëm",
 
+    pickLocation: "Ju lutem zgjedhni shtetin tuaj",
+    agreeConditions: "Ju duhet te pranoni kushtet tona te privatesise"
 
   },
   eng:{
@@ -23,7 +35,6 @@ export const  label = {
     objectNodesc: "Please choose animal no.",
     frame: "Your favorite frame",
     avatar: "Your favorite theme",
-
     black: "Black",
     wood: "Wood",
     white: "White",
@@ -32,8 +43,22 @@ export const  label = {
     uploadFile: "Please upload your animal picture",
     allowdImageExtension: "Please upload images in jpef, jpg, png or gif format",
     checkoutModalTitle: "Product Added Succesfully! ",
-    checkoutModalDesc: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ",
-    continue: "Vazhdo "
+    checkoutModalDesc: "You will be redirected to checkout for {{time}} seconds",
+    continue: "Vazhdo ",
+    min3: "Minimum 3 characters",
+    max50: "Maximum 50 characters",
+    required: "This field is required",
+    mailError: "Please enter a valid mail!",
+    onlyNumber: "Please enter a valid number",
+    onlyLetters: "Please enter only letters at specific fields",
+    requiredName:"Full Name is required!",
+    requiredCountry:"Country is required!",
+    requiredCity:"City is required!",
+    requiredEmail:"Email Address is required!",
+    requiredAddress:"Address is required!",
+
+    pickLocation: "Please pick your country",
+    agreeConditions: "Please accept our terms & conditions"
 
 
 

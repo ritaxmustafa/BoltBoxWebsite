@@ -1,0 +1,15 @@
+.crumbs{
+  display: flex;
+  align-items: center;
+}
+
+.crumbs a{
+  position: relative;
+  background-color: var(--white);
+  color: var(--main);
+}
+
+.crumbs svg{
+  width: 25px;
+  color: var(--main);
+}

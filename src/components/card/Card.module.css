@@ -1,0 +1,43 @@
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+  color: #000;
+}
+
+.cardImage {
+  transition: 0.5s;
+  box-shadow: 0 0.125rem 0.25rem #00000020 !important;
+  margin-bottom: 10px;
+  background-color: #f8f8f8;
+  border-radius: var(--radius-image);
+  width: 100%;
+}
+.cardWrapper span{
+  font-size: 20px;
+}
+.cardImage img {
+  width: 100%;
+}
+.cardWrapper:hover .cardImage {
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 800px) {
+  .cardWrapper{
+    padding:0px;
+  }
+  .cardImage+div{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  .cardImage+div p{
+    font-size: 14px;
+  }
+}

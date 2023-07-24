@@ -6,18 +6,23 @@ import Loader from "../../components/loader/Loader";
 import { setOrderInfo } from "../../helpers/redux/slice";
 import SelectModel from "../../components/order/SelectModel";
 import ProductInfoModel from "../../components/order/ProductInfoModel";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import CheckoutModal from "../../components/checkout/CheckoutModal";
+import HeadCrumbs from "../../components/crumbs/HeadCrumbs";
 
 const CreateOrder = () => {
+  const location = useLocation();
+  const propsData = location.state;
+
   const dispatch = useDispatch();
-  const { order } = useSelector((state) => state.global);
+  const { order, country } = useSelector((state) => state.global);
   const [pageProps, setPageProps] = useState({
-    stepOptions: false,
-    currentStep: 1,
+    stepOptions: [],
+    currentStep: propsData?.step ? propsData.step : 1,
     loading: true,
-    showChekout: true,
+    showChekout: false,
   });
+
 
   const updatePageprops = (data) => {
     //Update state-in pa i fshi vlerat e tjera ekzistuese
@@ -27,7 +32,9 @@ const CreateOrder = () => {
     }));
   };
 
+
   useEffect(() => {
+
     //Get steps
     client.get("assets").then((response) => {
       updatePageprops({ stepOptions: response.data, loading: false });
@@ -38,14 +45,12 @@ const CreateOrder = () => {
     dispatch(setOrderInfo(assets));
 
     //Update Page and Next Step
-    if (pageProps.currentStep < Object.keys(pageProps.stepOptions).length) {
+    if (pageProps.currentStep < 2) {
       updatePageprops({ loading: true });
 
       setTimeout(function () {
         updateStep(true);
       }, 1000);
-    } else {
-      updatePageprops({ showChekout: true });
     }
   };
 
@@ -64,48 +69,64 @@ const CreateOrder = () => {
 
   return (
     <div className={`container ${style.orderWrapper}`}>
+      <HeadCrumbs title="Order" link="/order" />
       {!pageProps.loading ? (
         <>
-              {/* Stepi ku pyetet per no. e kafsheve */}
-              {pageProps.currentStep === 1 || !order?.orderInfo?.objectNo ? (
-                <SelectModel
-                  data={pageProps.stepOptions[pageProps.currentStep]}
+          {/* Stepi ku pyetet per no. e kafsheve */}
+          {pageProps.currentStep === 1 || !order?.orderInfo?.objectNo ? (
+            <SelectModel
+              data={pageProps.stepOptions[pageProps.currentStep]}
+              step={pageProps.currentStep}
+              updateOrderData={updateOrderData}
+              updateStep={updateStep}
+            ></SelectModel>
+          ) : (
+            <div>
+              <div className={style.productInfoModel}>
+                <div>
+                  {order?.orderInfo?.["objectNo"]?.icon &&
+                  order?.orderInfo?.["avatar"]?.icon ? (
+                    <img
+                      src={`./images/theme/${
+                        order?.orderInfo?.["objectNo"]?.id +
+                        "" +
+                        order?.orderInfo?.["avatar"]?.id
+                      }.png`}
+                      alt="Portait"
+                    />
+                  ) : (
+                    <img
+                      src={`./images/theme/${order?.orderInfo?.["objectNo"]?.icon}`}
+                      alt="Portait"
+                    />
+                  )}
+                  <h1 className={style.priceTotal}>
+                    Price: {order.price} &euro;
+                  </h1>
+                  <div>
+                    {country?.discount > 0 && (
+                      <p className={style.discountText}>
+                        We are pleased to inform you that you will receive a  {country?.discount}€ discount on your purchase at the checkout page since your shipping country is  {country.name}.
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <ProductInfoModel
+                  data={pageProps.stepOptions}
                   step={pageProps.currentStep}
                   updateOrderData={updateOrderData}
                   updateStep={updateStep}
-                ></SelectModel>
-              ) : (
-                <div>
-                  <div className={style.productInfoModel}>
-                    <div>
-                      {order?.orderInfo?.["objectNo"]?.icon &&
-                      order?.orderInfo?.["avatar"]?.icon ? (
-                        <img
-                          src={`./images/theme/${
-                            order?.orderInfo?.["objectNo"]?.id +
-                            "" +
-                            order?.orderInfo?.["avatar"]?.id
-                          }.png`}
-                          alt="Portait"
-                        />
-                      ) : (
-                        <img
-                          src={`./images/theme/${order?.orderInfo?.["objectNo"]?.icon}`}
-                          alt="Portait"
-                        />
-                      )}
-                    </div>
-                    <ProductInfoModel
-                      data={pageProps.stepOptions}
-                      step={pageProps.currentStep}
-                      updateOrderData={updateOrderData}
-                      updateStep={updateStep}
-                    />
-                  </div>
-                </div>
-              )}
-             {pageProps.showChekout && <CheckoutModal/> }
-          </>
+                  updatePageprops={updatePageprops}
+                />
+              </div>
+            </div>
+          )}
+          {pageProps.showChekout && (
+            <CheckoutModal
+              onClose={() => updatePageprops({ showChekout: false })}
+            />
+          )}
+        </>
       ) : (
         <Loader />
       )}

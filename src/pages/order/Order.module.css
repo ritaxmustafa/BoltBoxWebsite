@@ -2,7 +2,7 @@
   padding:40px;
   /* background-color: var(--light-main); */
   border-radius: var(--radius-image);
-  margin:50px auto;
+  margin:0px auto;
   min-height: 60vh;
 }
 .orderFooter{
@@ -26,4 +26,19 @@
 .productInfoModel img{
   width: 100%;
   cursor: pointer;
+}
+.priceTotal{
+  font-weight: bold;
+  color: var(--main);
+}
+
+@media (max-width: 800px) {
+  .orderWrapper{
+    padding: 20px;
+    padding-top: 30px;
+  }
+  .productInfoModel{
+    grid-template-columns: 1fr;
+
+  }
 }

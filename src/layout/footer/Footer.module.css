@@ -1,0 +1,28 @@
+.footer{
+  color: white;
+  background: #00010a;
+  padding: 50px 0px;
+  margin-top: 50px;
+  border-top: 1px solid rgb(128 128 128);
+}
+.footerSection{
+  display: flex;
+  flex-direction: column;
+}
+.footerSection h1{
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+.footerSection a{
+  color: var(--white);
+  padding-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+  .footer h1{
+    font-size: 15px;
+
+  }
+  
+}

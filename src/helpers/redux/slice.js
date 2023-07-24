@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   lng: "alb",
+  country: "",
   order: {
     details: [],
     client:{},
     orderInfo: {},
+    images:[],
     price: 0
   }
 };
@@ -13,8 +15,15 @@ export const globalSlice = createSlice({
   name: "global",
   initialState,
   reducers: {
+    setCountry:  (state, action) => {
+      state.country = action.payload;
+
+    },
     setLanguage: (state, action) => {
       state.lng = action.payload
+    },
+    setImages:(state, action) =>{
+      state.order.images = action.payload
     },
     setDetailsInfo: (state, action) => {
       state.order.details = action.payload
@@ -28,23 +37,23 @@ export const globalSlice = createSlice({
 
 
       // //Update specific key
-      let price = state.order.price;
+      let price = parseFloat(state.order.price);
       let newData =  action.payload;
+
       
       //Kategorine e njejte e mbishkruan. Psh: Kornize e bardh pastaj e klikon kornizen e zeze
       if(oldDataUpdated[newData.type]){
-        price -=  (parseFloat(oldDataUpdated[newData.type].price))
+        price = price -  (parseFloat(oldDataUpdated[newData.type].price))
       }
 
       oldDataUpdated[newData.type] = newData;
-      price +=  (parseFloat(newData.price))
-
+      price =  price + (parseFloat(newData.price))
 
       state.order.orderInfo = oldDataUpdated;
-      state.order.price = price;
+      state.order.price = parseFloat(price).toFixed(2);
     },
     setPrice: (state, action) => {
-      state.order.price = action.payload
+      state.order.price = parseFloat(action.payload).toFixed(2)
     },
     resetGlobal: () => initialState
   }
@@ -54,7 +63,9 @@ export const {
   setLanguage,
   setDetailsInfo,
   setOrderInfo,
+  setCountry,
   setClientInfo,
+  setImages,
   resetGlobal,
   setPrice
 } = globalSlice.actions;

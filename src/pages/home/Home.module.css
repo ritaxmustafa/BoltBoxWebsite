@@ -1,0 +1,36 @@
+.homeCard img{
+  border: 5px solid #2f3133;
+  display: block;
+  transition: 0.3s;
+  width: 100%;
+}
+.homeInfoCard{
+  display: flex;
+  padding:50px;
+  flex-direction: column;
+  height: 100%;
+  width: 95%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  border-radius: var(--radius-image);
+  background-color: #00abd6;
+  color: white;
+}
+.homeInfoCard a{
+  background-color: white;
+  width: fit-content;
+  padding: 10px 30px;
+  border-radius: var(--radius-input);
+  margin-top: 20px;
+  color: var(--main);
+}
+
+@media (max-width: 800px) {
+  .homeInfoCard{
+    height: 75vh;
+    padding:15px 20px;
+    width: 100%;
+  }
+}
+

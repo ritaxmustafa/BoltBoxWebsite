@@ -1,0 +1,110 @@
+.checkoutWrapper {
+  display: flex;
+  background: linear-gradient(90deg, #fff 50%,  var(--light-main) 50%);
+}
+form {
+  padding: 60px 30px 0px 0px;
+}
+.lastSection {
+  border-bottom: none !important;
+}
+.checkoutSummary {
+  max-height: 100vh;
+  min-height: 100vh;
+  padding: 60px 0px 0px 30px;
+}
+.checkoutSummerProduct{
+  border-bottom: 1px solid var(--border-color);
+
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.checkoutSummerProduct>div {
+  display: flex;
+  width: 100%;
+}
+.borderBottom{
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.checkoutSummerProduct>div>div:first-child{
+  margin-right: 20px;
+}
+.checkoutSummerProduct img {
+  width: 150px;
+  border: 1px solid var(--border-color);
+}
+.checkoutSummerProduct a{
+  font-size: 13px;
+  color: var(--main);
+}
+.checkoutSummerProduct svg{
+  margin-left: 5px;
+}
+.price {
+  color: var(--main);
+}
+.totalPrice{
+  font-size: 25px;
+}
+
+.inputError{
+  border: 1px solid indianred;
+}
+.checkoutWrapper form button{
+  width: 100%;
+  margin-top: 50px;
+}
+.discountText{
+  font-size: 13px;
+  padding-top: 10px;
+}
+.checkoutSummaryMobile>p{
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  
+  .checkoutSummaryMobile>p{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--light-main);
+    padding:10px;
+    border: 1px solid var(--main);
+    border-radius: var(--radius-image);
+    margin-top: 25px;
+  }
+  .checkoutSummerProduct img{
+    border: 1px solid var(--main);
+
+  }
+  .checkoutWrapper{
+    background:none;
+  }
+  form,
+  .mobileSummary{
+    padding: 0px;
+    max-height: fit-content;
+    min-height: fit-content;
+  }
+  .checkoutSummary{
+    /* display: none; */
+    border-radius: var(--radius-image);
+    background-color: var(--light-main);
+    border: 1px solid var(--main);
+    display: none;
+    padding:20px;
+
+  }
+  .checkoutSummerProduct{
+    transition: 0.5s;
+    flex-direction: column;
+  }
+  .checkout{
+    display:flex;
+    flex-direction: column-reverse;
+  }
+}

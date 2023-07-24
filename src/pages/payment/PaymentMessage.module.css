@@ -1,0 +1,62 @@
+.paymentMessage{
+  width: 50%;
+  margin: auto;
+  
+}
+.paymentMessageBody{
+  width: 50%;
+  margin: 70px auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: white;
+  padding: 10px 0px 30px 0px;
+  box-shadow: 0 0.125rem 0.25rem #00000020 !important;
+  margin-bottom: 10px;
+  border-radius: var(--radius-image);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  align-items: center;
+}
+.paymentMessageBodyError{
+  width: 50%;
+  margin: 70px auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: white;
+  padding: 10px 0px 30px 0px;
+  box-shadow: 0 0.125rem 0.25rem #00000020 !important;
+  margin-bottom: 10px;
+  border-radius: var(--radius-image);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  align-items: center;
+  height: 50vh;
+}
+.paymentMessageFooter{
+  padding-top: 50px;
+  text-align: center;
+}
+.paymentMessageFooter h1{
+  color: var(--main);
+}
+.paymentMessageFooter span{
+  font-size: 13px;
+}
+.paymentMessageError{
+  margin: 0px;
+
+}
+@media (max-width: 800px) {
+  .paymentMessageBody{
+    padding:20px;
+  }
+  .paymentMessageBody,
+  .paymentMessageBodyError{
+    width: 100%;
+    margin: 40px 0px;
+  }  
+  .paymentMessageFooter h1{
+    text-align: center;
+  }
+
+}

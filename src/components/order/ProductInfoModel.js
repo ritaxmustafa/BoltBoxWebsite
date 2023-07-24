@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { label } from "../../helpers/language";
 import style from "./OrdersComponent.module.css";
 import { BsCardImage } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { setDetailsInfo } from "../../helpers/redux/slice";
+import { setDetailsInfo, setImages } from "../../helpers/redux/slice";
 
 function ProductInfoModel(props) {
+  const dispatch = useDispatch();
   const { order, lng } = useSelector((state) => state.global);
   const [error, setError] = useState('');
   const [files, setFiles] = useState(null);
   const [formData, setFormData] = useState(null);
 
-  const [details, setDetails] = useState(
-    order?.details.length > 0
-      ? order.details
-      : []
-  );
+  const [details, setDetails] = useState([]);
 
   const generateGrid = (data) => {
     return "grid" + data.length;
@@ -35,6 +32,11 @@ function ProductInfoModel(props) {
   useEffect(() => {
     //Get steps
     if(error.length>0){
+      //Scroll to top of page to show error message
+
+      window.scrollTo(0, 0);
+      document.getElementById("error").scrollIntoView();
+
       setTimeout(() => {
         setError("");
       }, 3000);
@@ -46,7 +48,11 @@ function ProductInfoModel(props) {
     if(validateInfo()){
       //Validate File Upload
       if(validateFile()){
-        
+
+        const imageURLs = Array.from(files).map((file) => URL.createObjectURL(file));
+        dispatch(setImages(imageURLs));
+        dispatch(setDetailsInfo(details));
+        props.updatePageprops({ showChekout: true })
       }
     } 
   }
@@ -56,9 +62,7 @@ function ProductInfoModel(props) {
 
     let isFormValid = true;
 
-    console.log("details",details);
     for (let i = 0; i < order?.orderInfo?.objectNo.value; i++) {
-      console.log("details[i]", details[i]);
       if (!details[i]) {
         isFormValid = false;
         break;
@@ -88,35 +92,30 @@ function ProductInfoModel(props) {
 
       // Create an object of formData
       const files = e.target.files;
-      const formData = new FormData();
 
     
-      console.log("---",typeof files);
-
       Object.keys(files).forEach(function(key) {
-        if(!allowedExtension.indexOf(files[key].type)>-1){
+        if(allowedExtension.indexOf(files[key].type) <= -1){
           hasError = true;
           setError(label[lng].allowdImageExtension);
-        }else formData.append(`file-${files[key]}`, files[key], files[key].name);
+        }
       });
-      // });
       if(!hasError) {
         setFiles(e.target.files);
         setFormData(formData);
       }
-      // Details of the uploaded file
   }
 
 
 
   return (
     <div className={style.orderBody}>
-      <h1>Create your Bolt Box</h1>
-      {error.length>0 && <p className="errorMsg">{error}</p>}
+      <h1 id="error">Create your Bolt Box</h1>
+      {error.length>0 && <p  className="errorMsg">{error}</p>}
       <div className={style.detailsWrapper}>
         <div className="flex">
           <p>Të dhënat e kafshës suaj</p>
-          <span>Demo te fotografisë</span>
+          <Link to="/demo" target="_blank"><span>Demo te fotografisë</span></Link>
         </div>
         <div className={`${'grid'+order?.orderInfo?.objectNo.value}`}>
           {
@@ -162,10 +161,10 @@ function ProductInfoModel(props) {
           </div>
         );
       })}
-        <div className="flex">
-          <p>Size: 33x48</p>
-          <a href="mailto:info@bolt.box">Required a specific size</a>
-        </div>
+      <div className="flex">
+        <p>Size: 33x48</p>
+        <a href="mailto:info@bolt.box">Required a specific size</a>
+      </div>
       <button className="btn" onClick={()=>addCart()}>{label[lng].continue}</button>
     </div>
   );
