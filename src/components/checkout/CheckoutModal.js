@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { label } from "../../helpers/language";
 import style from "./CheckoutModal.module.css";
-import Lottie from "lottie-react";
+import { useLottie } from "lottie-react";
 import dog from "../../helpers/lotties/dog.json";
 import { Link, useNavigate } from "react-router-dom";
 import {MdClose} from "react-icons/md";
@@ -40,21 +40,21 @@ function CheckoutModal(props) {
   });
 
 
-
-
-
   const defaultOptions = {
     loop: true,
     autoplay: true,
     animationData: dog,
   };
 
+  const { View } = useLottie(defaultOptions);
+
+
   return (
     <div className={style.checkoutModal} onClick={()=>props.onClose()}>
       <div className={style.checkoutBody} onClick={(e)=>e.stopPropagation()}>
         <span className={style.close} onClick={()=>{document.body.style.overflow = 'visible';props.onClose()}}><MdClose/></span>
         <div>
-          <Lottie options={defaultOptions} />
+          {View}
         </div>
         <h1>{label[lng].checkoutModalTitle}</h1>
         <p>{label[lng].checkoutModalDesc.replace("{{time}}", seconds)}</p>

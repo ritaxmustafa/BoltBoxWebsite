@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container">
         <div className="grid12">
           <div>
-            <img src="../images/boltfooter.svg" alt="logo" width={150} />
+            <img src="../images/boltfooter.svg" alt="logo" width={150} loading="lazy" />
             <h1>We challenge core assumptions.</h1>
             <p>info@bolx-box.com</p>
           </div>
@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
         <div>
           <p>Payment</p>
-          <img src="../images/paysera.svg" alt="logo" width={150} />
+          <img src="../images/paysera.svg" alt="logo" width={150} loading="lazy" />
 
         </div>
       </div>

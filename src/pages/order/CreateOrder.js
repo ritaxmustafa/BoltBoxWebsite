@@ -11,13 +11,14 @@ import CheckoutModal from "../../components/checkout/CheckoutModal";
 import HeadCrumbs from "../../components/crumbs/HeadCrumbs";
 import HowItWorks from "../../layout/helpers/HowItWorks";
 import Reverse from "../../components/reverse/reverse";
+import { label } from "../../helpers/language";
 
 const CreateOrder = () => {
   const location = useLocation();
   const propsData = location.state;
 
   const dispatch = useDispatch();
-  const { order, country } = useSelector((state) => state.global);
+  const { order, country, lng } = useSelector((state) => state.global);
   const [pageProps, setPageProps] = useState({
     stepOptions: [],
     currentStep: propsData?.step ? propsData.step : 1,
@@ -103,7 +104,7 @@ const CreateOrder = () => {
                     />
                   )}
                   <h1 className={style.priceTotal}>
-                    Price: {order.price} &euro;
+                  {label[lng].price}: {order.price} &euro;
                   </h1>
                   <div>
                     {country?.discount > 0 && (
@@ -132,8 +133,7 @@ const CreateOrder = () => {
       ) : (
         <Loader />
       )}
-<Reverse/>
-
+      <Reverse/>
       <HowItWorks/>
     </div>
   );

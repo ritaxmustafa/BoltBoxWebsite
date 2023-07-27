@@ -14,7 +14,7 @@
   width: 550px;
   border-radius: var(--radius-image);
   margin: auto ;
-  text-align: left;
+  text-align: center;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -26,9 +26,12 @@
 .checkoutBody h1{
   padding-top: 20px;
   font-size: 20px;
+  margin: 0px;
 }
 .checkoutBody p{
   font-size: 16px;
+  padding:0px 0px 10px 0px;
+  margin: 0px;
 }
 .close{
   position: absolute;
@@ -59,6 +62,52 @@
   border: none;
   border-radius: var(--radius-input);
   width: 200px;
+  cursor: pointer;
+}
+.message{
+  font-size: 13px;
+  font-style: italic;
+}
+.modalUpload button{
+  background-color: var(--main);
+  color: var(--white);
+  outline: none;
+  margin-top: 20px;
+  padding:10px;
+  border: none;
+  border-radius: var(--radius-input);
+  width: 100%;
+  cursor: pointer;
+}
+.inputFile{
+  display: flex;
+  margin-bottom: 5px;
+  width: 100%;
+  
+}
+.inputFile input{
+  width: 100%;
+}
+.file{
+  position: relative;
+  margin-top: 5px;
+  width: 100%;
+  border: 1px dashed var(--main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: var(--main);
+  cursor: pointer;
+  font-size: 30px;
+  padding: 10px;
+}
+.file svg{
+  cursor: pointer;
+}
+.file input{
+  position: absolute;
+  opacity: 0;
   cursor: pointer;
 }
 @media (max-width: 800px) {

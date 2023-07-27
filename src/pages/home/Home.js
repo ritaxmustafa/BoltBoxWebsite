@@ -4,9 +4,11 @@ import Products from "../../layout/products/Products";
 import style from "./Home.module.css";
 import HowItWorks from "../../layout/helpers/HowItWorks";
 import FAQ from "../../layout/faq/Faq";
-import SocialMedia from "../../layout/socialMedia/SocialMedia";
-import CreateOrder from "../order/CreateOrder";
+import { label } from "../../helpers/language";
+import { useSelector } from "react-redux";
 const Home = () => {
+  const { lng } = useSelector((state) => state.global);
+
   const portrait = [
     {
       image: "../images/general/j9-min.webp",
@@ -47,13 +49,9 @@ const Home = () => {
             className={style.homeInfoCard}
             style={{ backgroundImage: "url(./images/general/Background.webp)" }}
           >
-            <h1>The portrait your furry friend deserves</h1>
-            <p>
-              Lights, camera, woof! Give your pup the celebrity treatment they
-              deserve with our film-themed portraits. Choose from our range of
-              design options to find the paw-fect print for your pup-arazzi.
-            </p>
-            <Link to="">Paint My Pet</Link>
+            <h1>{label[lng].furryFriend}</h1>
+            <p>{label[lng].furryFriendDesc}  </p>
+            <Link to="">{label[lng].paintPet}</Link>
           </div>
           <div className="grid3">
             {portrait.map((item) => {

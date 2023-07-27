@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import loading from "../../helpers/lotties/loading-dog.json";
 import style from "./Loader.module.css";
-import Lottie from "lottie-react";
+import { useLottie } from "lottie-react";
 
 function Loader() {
   const defaultOptions = {
@@ -10,12 +10,12 @@ function Loader() {
     animationData: loading,
   };
 
+  const { View } = useLottie(defaultOptions);
+
   return (
     <>
       <div className={style.loader}>
-        <div>
-          <Lottie options={defaultOptions} />
-        </div>
+        <div>{View}  </div>
       </div>
     </>
   );

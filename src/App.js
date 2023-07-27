@@ -13,6 +13,9 @@ function App() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const { country } = useSelector((state) => state.global);
+
+
+
   const showComponent = () => {
     if (location.pathname === "/payment/failed") return false;
     if (location.pathname === "/payment/success") return false;
@@ -27,8 +30,17 @@ function App() {
     }
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 2000);
   }, []);
+
+
+  
+  useEffect(() => {
+    if(location.pathname !== "/order")  setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, [location]);
 
   return (
     <>

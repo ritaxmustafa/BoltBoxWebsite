@@ -1,4 +1,4 @@
-export const  label = {
+export const label = {
   alb: {
     objectNo: "Numri i kafshëve në fotografi",
     objectNodesc: "Ju lutem zgjedhni numrin e kafshëve në fotografi ",
@@ -10,7 +10,8 @@ export const  label = {
     noframe: "Pa kornizë",
     fillDetails: "Ju lutem plotësoni emrat që do të shfaqen në pikturë",
     uploadFile: "Ju lutem ngarkoni fotografinë",
-    allowdImageExtension: "Ju lutem ngarkoni fotografi te formatit jpef, jpg, png ose gif",
+    allowdImageExtension:
+      "Ju lutem ngarkoni fotografi te formatit jpef, jpg, png ose gif",
     checkoutModalTitle: "Produkti u shtua me sukses! ",
     checkoutModalDesc: "Ju do te ridrejtoheni tek arka per {{time}} sekonda ",
     continue: "Continue",
@@ -20,18 +21,54 @@ export const  label = {
     mailError: "Vendosni një email valide!",
     onlyNumber: "Vendosni një numër valid",
     onlyLetters: "Vendosni vetëm shkronja",
-    requiredName:"Emri është i domosdoshëm",
-    requiredCountry:"Shteti është i domosdoshëm",
-    requiredCity:"Qyteti është i domosdoshëm",
-    requiredEmail:"Email Adresa është e domosdoshëm",
-    requiredAddress:"Adresa është e domosdoshëm",
+    requiredName: "Emri është i domosdoshëm",
+    requiredCountry: "Shteti është i domosdoshëm",
+    requiredCity: "Qyteti është i domosdoshëm",
+    requiredEmail: "Email Adresa është e domosdoshëm",
+    requiredAddress: "Adresa është e domosdoshëm",
 
     pickLocation: "Ju lutem zgjedhni shtetin tuaj",
-    agreeConditions: "Ju duhet te pranoni kushtet tona te privatesise"
+    agreeConditions: "Ju duhet te pranoni kushtet tona te privatesise",
+    invalidImages: "Fotografitë e vendosura nuk janë valide",
+    invalidImagesText: "Formati i pranueshëm i fotografisë: jpeg, jpg, png",
+    invalidImageContact:
+      "Në rast që fotografitë nuk i përmbahen rregullave njëri nga agjentët tanë do të ju kontaktoj përmes email adresës",
+    monthlyTheme: "Pikturat e këtij muaji",
 
+    orderNow: "Porosit tani",
+    bannerTitle:
+      "Krijimi i artit që komunikon me shpirtin e çdo njeriu që e do kafshët",
+    bannerDesc:
+      " Zgjidhni një dizajn dhe ngarkoni fotografinë tuaj për të krijuar një kryevepër të personalizuar.",
+    paintPet: "Pikturo kafshën time",
+    gift: "Porositë dhuratë për dikë",
+    furryFriend: "Portreti që miku juaj meriton",
+    furryFriendDesc:
+      "Woof, woof! Jepni shokut tuaj të vogël trajtimin e yjeve me portrete tona të temave të ndryshme. Zgjidhni nga shumë opsione dizajni për të gjetur printin përkates për shokun tuaj të vogël.",
+    createBolt: "Krijoni BoltBox kutinë tuaj",
+    animalDetails: "Të dhënat",
+    name: "Emri",
+    demo: "Demo e fotografisë",
+    multipleImage: "Ju mund te shtoni me shume se nje fotografi",
+    price: "Cmimi",
+    otherSize: "Kërkoni një madhësi tjetër",
+
+    personalInformation: "Informata Personale",
+    firstName: "Emri",
+    phoneNumber: "Numri i Telefonit (Opsionale)",
+    shippingAddress: "Adresa e Dërgesës",
+    country: "Shteti",
+    city: "Qyteti",
+    address: "Adresa",
+    agreeTerms: "Dakordo me kushtet dhe kushtetutat",
+    buy: "Blej",
+    orderDetails: "Detajet e Porosisë",
+    discount: "Zbritje",
+    editOrder: "Edito Porosinë",
+    shipping: "Transporti"
   },
-  eng:{
-    objectNo: "Pets no. in your portrait?",
+  eng: {
+    objectNo: "Pets no. in your portrait",
     objectNodesc: "Please choose animal no.",
     frame: "Your favorite frame",
     avatar: "Your favorite theme",
@@ -41,9 +78,11 @@ export const  label = {
     noframe: "No frame",
     fillDetails: "Please fill in the names that will appear in the picture ",
     uploadFile: "Please upload your animal picture",
-    allowdImageExtension: "Please upload images in jpef, jpg, png or gif format",
+    allowdImageExtension:
+      "Please upload images in jpef, jpg, png or gif format",
     checkoutModalTitle: "Product Added Succesfully! ",
-    checkoutModalDesc: "You will be redirected to checkout for {{time}} seconds",
+    checkoutModalDesc:
+      "You will be redirected to checkout for {{time}} seconds",
     continue: "Vazhdo ",
     min3: "Minimum 3 characters",
     max50: "Maximum 50 characters",
@@ -51,16 +90,117 @@ export const  label = {
     mailError: "Please enter a valid mail!",
     onlyNumber: "Please enter a valid number",
     onlyLetters: "Please enter only letters at specific fields",
-    requiredName:"Full Name is required!",
-    requiredCountry:"Country is required!",
-    requiredCity:"City is required!",
-    requiredEmail:"Email Address is required!",
-    requiredAddress:"Address is required!",
+    requiredName: "Full Name is required!",
+    requiredCountry: "Country is required!",
+    requiredCity: "City is required!",
+    requiredEmail: "Email Address is required!",
+    requiredAddress: "Address is required!",
 
     pickLocation: "Please pick your country",
-    agreeConditions: "Please accept our terms & conditions"
+    agreeConditions: "Please accept our terms & conditions",
+    invalidImages: "Invalid Image",
+    invalidImagesText: "The picture must be a file of type: jpeg, jpg, png",
+    invalidImageContact:
+      "In case the photos do not comply with the rules one of our agents will contact you via your email address",
+    monthlyTheme: "Monthly Theme",
+    orderNow: "Order Now",
+    bannerTitle: "Creating art that speaks to the soul of every pet lover",
+    bannerDesc:
+      "Bring your vision to life. Select a design and upload your photo to create a custom masterpiece.",
+    paintPet: "Paint my Pet",
+    gift: "Order a gift",
+    furryFriend: "The portrait your furry friend deserves.",
+    furryFriendDesc:
+      "Lights, camera, woof! Give your pup the celebrity treatment they deserve with our film-themed portraits. Choose from our range of design options to find the paw-fect print for your pup-arazzi.",
+    createBolt: "Create your BoltBox",
+    animalDetails: "Your furry friend info",
+    name: "Name",
+    demo: "Image demo",
+    multipleImage: "You can add multiple images",
+    price: "Price",
+    otherSize: "Require another size",
 
+    personalInformation: "Personal Information",
+    firstName: "First Name",
+    phoneNumber: "Phone Number (Optional)",
+    shippingAddress: "Shipping Address",
+    country: "Country",
+    city: "City",
+    address: "Address",
+    agreeTerms: "I agree with terms&conditions",
+    buy: "Buy",
+    orderDetails: "Order Details",
+    discount: "Discount",
+    editOrder: "Edit Order",
+    shipping: "Shipping"
 
+  },
+  deu: {
+    objectNo: "Haustier-Nr. in Ihrem Porträt",
+    objectNodesc: "Bitte wählen Sie die Tier-Nr.",
+    frame: "Ihr Lieblingsrahmen",
+    avatar: "Ihr Lieblingsthema",
+    black: "Schwarz",
+    wood: "Holz",
+    white: "Weiß",
+    noframe: "Kein Rahmen",
+    fillDetails:
+      "Bitte geben Sie die Namen ein, die auf dem Bild erscheinen sollen",
+    uploadFile: "Bitte laden Sie Ihr Tierbild hoch",
+    allowdImageExtension:
+      "Bitte laden Sie Bilder im jpef, jpg, png oder gif Format hoch",
+    checkoutModalTitle: "Produkt erfolgreich hinzugefügt!",
+    checkoutModalDesc:
+      "Sie werden für {{time}} Sekunden zum Checkout weitergeleitet",
+    continue: "Fortsetzen",
+    min3: "Mindestens 3 Zeichen",
+    max50: "Maximal 50 Zeichen",
+    required: "Dieses Feld ist erforderlich",
+    mailError: "Bitte geben Sie eine gültige E-Mail-Adresse ein!",
+    onlyNumber: "Bitte geben Sie eine gültige Nummer ein",
+    onlyLetters: "Bitte geben Sie nur Buchstaben in bestimmten Feldern ein",
+    requiredName: "Vollständiger Name ist erforderlich!",
+    requiredCountry: "Land ist erforderlich!",
+    requiredCity: "Stadt ist erforderlich!",
+    requiredEmail: "E-Mail-Adresse ist erforderlich!",
+    requiredAddress: "Adresse ist erforderlich!",
+    pickLocation: "Bitte wählen Sie Ihr Land",
+    agreeConditions: "Bitte akzeptieren Sie unsere AGB",
+    invalidImages: "Ungültiges Bild",
+    invalidImagesText: "Das Bild muss eine Datei vom Typ: jpeg, jpg, png sein",
+    invalidImageContact:
+      "Falls die Fotos nicht den Regeln entsprechen, wird einer unserer Mitarbeiter Sie über Ihre E-Mail-Adresse kontaktieren",
+    monthlyTheme: "Monatsthema",
+    orderNow: "Jetzt bestellen",
+    bannerTitle:
+      "Die Erschaffung von Kunst, die die Seele eines jeden Tierliebhabers anspricht",
+    bannerDesc:
+      "Bringen Sie Ihre Vision zum Leben. Wählen Sie ein Design aus und laden Sie Ihr Foto hoch, um ein individuelles Meisterwerk zu erstellen. ",
+    paintPet: "Male mein Haustier",
+    gift: "Bestellen Sie ein Geschenk",
+    furryFriend: "Das Porträt, das Ihr pelziger Freund verdient.",
+    furryFriendDesc:
+      " Licht, Kamera, wuff! Geben Sie Ihrem Welpen mit unseren Porträts zum Thema Film die Promi-Behandlung, die er verdient. Wählen Sie aus unserem Angebot an Designoptionen, um den perfekten Pfotenabdruck für Ihren Welpen-Arazzi zu finden.",
+    createBolt: "Erstellen Sie Ihre Bolt Box",
+    animalDetails: "Die Daten Ihres Haustiers",
+    name: "Name",
+    demo: "Bildvorschau",
+    multipleImage: "Sie können mehrere Bilder hinzufüge",
+    price: "Preis",
+    otherSize: "Benötigt eine bestimmte Größe",
+    personalInformation: "Persönliche Informationen",
+    firstName: "Vorname",
+    phoneNumber: "Telefonnummer (Optional)",
+    shippingAddress: "Versandadresse",
+    country: "Land",
+    city: "Stadt",
+    address: "Adresse",
+    agreeTerms: "Ich stimme den Geschäftsbedingungen zu",
+    buy: "Kaufen",
+    orderDetails: "Bestelldetails",
+    discount: "Rabatt",
+    editOrder: "Bestellung bearbeiten",
+    shipping: "Versand"
 
-  }
-}
+  },
+};

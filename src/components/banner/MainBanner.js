@@ -1,26 +1,27 @@
 import { Link } from "react-router-dom";
 import style from "./Banner.module.css";
+import { label } from "../../helpers/language";
+import { useDispatch, useSelector } from "react-redux";
 
 const MainBanner = () => {
+  const dispatch = useDispatch();
+  const { lng } = useSelector((state) => state.global);
+
+
   return (
     <div className={style.banner}>
       <div className="container ">
         <div className="grid2">
           <div className={style.bannerText}>
-            <h1>Creating art that speaks to the soul of every pet lover</h1>
-            <p>
-              Bring your vision to life. Select a design and upload your photo
-              to create a custom masterpiece.
-              Bring your vision to life. Select a design and upload your photo
-              to create a custom masterpiece.
-            </p>
+            <h1>{label[lng].bannerTitle}  </h1>
+            <p>{label[lng].bannerDesc} </p>
             <div className={style.bannerButton}>
-              <Link to="" className="btn">Paint My Pet</Link>
-              <Link to="" className="btnLight">Give a Gift</Link>
+              <Link to="" className="btn">{label[lng].paintPet}</Link>
+              <Link to="" className="btnLight">{label[lng].gift}</Link>
             </div>
           </div>
           <div className={style.bannerImage}>
-            <img src="../images/general/Banneri.webp" alt="banner"/>
+            <img src="../images/general/Banneri.webp" alt="banner" loading="lazy" />
           </div>
         </div>
       </div>

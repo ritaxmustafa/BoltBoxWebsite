@@ -73,7 +73,7 @@ const Collection = () => {
     return (
         <div className={style.collectionBck}>
             <div>
-                <img src="../images/general/img3.png" alt="color" className={style.collectionBanner}/>
+                <img src="../images/general/img3.png" alt="color" className={style.collectionBanner} loading="lazy" />
             </div>
          
             <div className="container ">

@@ -15,6 +15,7 @@ import { FiEdit2 } from "react-icons/fi";
 import CountrySelect from "../../components/select/CountrySelect";
 import { setCountry } from "../../helpers/redux/slice";
 import qs from "qs";
+import UploadImage from "../../components/modal/UploadImage";
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const Checkout = () => {
   const [value, setValue] = useState();
   const [loading, setLoading] = useState(true);
   const [openMobileMenu, setMobileMenu] = useState(false);
+  const [uploadImageModal, setUploadImageModal] = useState(false);
   const [validationError, setValidationError] = useState("");
 
   useEffect(() => {
@@ -62,8 +64,13 @@ const Checkout = () => {
     dispatch(setCountry(selectedCountry));
   };
 
+  console.log("order", order);
+
   return (
     <div className={style.checkoutWrapper}>
+      {uploadImageModal && (
+        <UploadImage closeModal={() => setUploadImageModal(false)} />
+      )}
       <div className={`container `}>
         {!loading ? (
           <div className={`grid2 ${style.checkout}`}>
@@ -79,32 +86,28 @@ const Checkout = () => {
               }}
               validationSchema={checkoutSchema}
               onSubmit={(values, { resetForm }) => {
+                setLoading(true);
+
                 if (Object.keys(order.orderInfo).length == 0) {
                   navigate("/");
                 } else {
-                  setLoading(false);
-
-
                   let orderInfo = values;
                   orderInfo.params = order.orderInfo;
                   orderInfo.country = country;
                   orderInfo.images = order.images;
                   orderInfo.details = order.details;
 
-                  
-                  console.log("order", orderInfo);
+                  client.post("/checkout", orderInfo).then((response) => {
+                    if (response.data.hasError) {
+                      if (response.data.msg === "invalidImage") {
+                        setUploadImageModal(true);
+                      } else setValidationError(response.data.msg);
 
-                  client
-                    .post("/checkout", orderInfo)
-                    .then((response) => {
-                      console.log("RESPONSE", response);
-                      if (response.data.hasError) {
-                        setValidationError(response.data.msg);
-                        setLoading(false);
-                      } else {
-                        window.open(response.data.url, "_self");
-                      }
-                    });
+                      setLoading(false);
+                    } else {
+                      window.open(response.data.url, "_self");
+                    }
+                  });
                 }
               }}
             >
@@ -114,10 +117,10 @@ const Checkout = () => {
                     <p className="errorMsg">{label[lng][validationError]}</p>
                   )}
                   <div className="sectionWrapper">
-                    <p>Personal Information</p>
+                    <p>{label[lng].personalInformation}</p>
                     <div className="grid2">
                       <div className="inputWrapper">
-                        <label>First Name</label>
+                        <label>{label[lng].firstName}</label>
                         <Field
                           name="firstName"
                           placeholder="Emri dhe Mbiemri"
@@ -145,7 +148,7 @@ const Checkout = () => {
                     </div>
                     <div className="grid1">
                       <div className="inputWrapper">
-                        <label>Phone Number (optional)</label>
+                        <label>{label[lng].phoneNumber}</label>
                         <PhoneInput
                           placeholder="Enter phone number"
                           value={value}
@@ -155,16 +158,16 @@ const Checkout = () => {
                     </div>
                   </div>
                   <div className={`${style.lastSection} sectionWrapper`}>
-                    <p>Shipping address</p>
+                    <p>{label[lng].shippingAddress}</p>
                     <div className="grid1">
                       <div className="inputWrapper">
-                        <label>Country</label>
+                        <label>{label[lng].country}</label>
                         <CountrySelect selectCountry={changeCountry} />
                       </div>
                     </div>
                     <div className="grid2">
                       <div className="inputWrapper">
-                        <label>City</label>
+                        <label>{label[lng].city}</label>
                         <Field
                           name="city"
                           placeholder="Prishtina"
@@ -176,7 +179,7 @@ const Checkout = () => {
                         )}
                       </div>
                       <div className="inputWrapper">
-                        <label>Postal Code</label>
+                        <label>ZIP</label>
                         <Field
                           name="zip"
                           placeholder="10000"
@@ -190,7 +193,7 @@ const Checkout = () => {
                     </div>
                     <div className="grid1">
                       <div className="inputWrapper">
-                        <label>Address</label>
+                        <label>{label[lng].address}</label>
                         <Field
                           name="address"
                           placeholder="Bregu i Diellit, H5"
@@ -208,7 +211,7 @@ const Checkout = () => {
                   <div className="grid1">
                     <label>
                       <Field type="checkbox" name="termsAndConditions" />
-                      Une pajtohem me kushtet e privatesise
+                      {label[lng].agreeTerms}
                     </label>
                     {errors.termsAndConditions && (
                       <p className="errorTxt">
@@ -227,7 +230,7 @@ const Checkout = () => {
                     )}
                   </div>
                   <button type="submit" className="btn">
-                    Blej
+                    {label[lng].buy}
                   </button>
                 </Form>
               )}
@@ -235,7 +238,7 @@ const Checkout = () => {
             <div>
               <div className={style.checkoutSummaryMobile}>
                 <p onClick={() => setMobileMenu(!openMobileMenu)}>
-                  Shiko detajet e porosisë{" "}
+                  {label[lng].orderDetails}{" "}
                   {openMobileMenu ? (
                     <MdKeyboardArrowDown />
                   ) : (
@@ -268,17 +271,22 @@ const Checkout = () => {
                       )}
                     </div>
 
-                    <div className="flex w100">
-                      <div className="flex">
-                        {Object.values(order.orderInfo).map((t, k) => {
-                          return <p>{t.description}/</p>;
-                        })}
+                    <div className={`w100 ${style.flex}`}>
+                      <div>
+                        <div className={style.flex}>
+                          {Object.values(order.orderInfo).map((t, k) => {
+                            return <p>{t.description}/</p>;
+                          })}
+                        </div>
+                        <p>
+                          {label[lng].name}: {order.details.toString()}
+                        </p>
                       </div>
                       <span className={style.price}>{order.price} &euro;</span>
                     </div>
                   </div>
                   <Link to="/order">
-                    Ndrysho
+                    {label[lng].editOrder}
                     <FiEdit2 />
                   </Link>
                 </div>
@@ -294,22 +302,29 @@ const Checkout = () => {
                   <span>{order.price} &euro;</span>
                 </div>
                 <div className="flex">
-                  <p>Shipping</p>
+                  <p> {label[lng].shipping}</p>
                   <span>
-                    {parseFloat(country.shippingPrice).toFixed(2)} &euro;
+                    {!isNaN(parseFloat(country.shippingPrice).toFixed(2))
+                      ? parseFloat(country.shippingPrice).toFixed(2)
+                      : "0.00"}{" "}
+                    &euro;
                   </span>
                 </div>
                 {country.discount > 0 && (
                   <div className="flex">
-                    <p>Discount</p>
+                    <p> {label[lng].discount}</p>
                     <span>
-                      -{parseFloat(country.discount).toFixed(2)} &euro;
+                      -
+                      {!isNaN(parseFloat(country.discount).toFixed(2))
+                        ? parseFloat(country.discount).toFixed(2)
+                        : "0.00"}{" "}
+                      &euro;
                     </span>
                   </div>
                 )}
                 <div className={`flex ${style.totalPrice}`}>
                   <p>Total</p>
-                  <span>{total} &euro;</span>
+                  <span>{!isNaN(total) ? total : order.price} &euro;</span>
                 </div>
               </div>
             </div>

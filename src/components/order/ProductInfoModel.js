@@ -128,18 +128,18 @@ function ProductInfoModel(props) {
 
   return (
     <div className={style.orderBody}>
-      <h1 id="error">Create your Bolt Box</h1>
+      <h1 id="error">{label[lng].createBolt}</h1>
       {error.length>0 && <p  className="errorMsg">{error}</p>}
       <div className={style.detailsWrapper}>
         <div className="flex">
-          <p>Të dhënat e kafshës suaj</p>
-          <Link to="/demo" target="_blank"><span>Demo te fotografisë</span></Link>
+          <p>{label[lng].animalDetails}</p>
+          <Link to="/demo" target="_blank"><span>{label[lng].demo}</span></Link>
         </div>
         <div className={`${'grid'+order?.orderInfo?.objectNo.value}`}>
           {
           [...Array(parseInt(order?.orderInfo?.objectNo.value))].map((e, i) =>
           <div className={style.inputFile} key={i}>
-            <input type="text" placeholder="Emri" 
+            <input type="text" placeholder={label[lng].name} 
             
             onChange={(e) => changeValue(e, i, "name")}
             />
@@ -150,7 +150,7 @@ function ProductInfoModel(props) {
           <BsCardImage />
         </div>
         {
-          !files ? <span>*You can add multiple images*</span>  : 
+          !files ? <span>*{label[lng].multipleImage}*</span>  : 
           <div className={`${'grid3'}`}>
             {Object.keys(files).map((file, i) => {
               return (<span key={i}>
@@ -180,8 +180,8 @@ function ProductInfoModel(props) {
         );
       })}
       <div className="flex">
-        <p>Size: 33x48</p>
-        <a href="mailto:info@bolt.box">Required a specific size</a>
+        <p>33x48</p>
+        <a href="mailto:info@bolt.box">{label[lng].otherSize}</a>
       </div>
       <button className="btn" onClick={()=>addCart()}>{label[lng].continue}</button>
     </div>
