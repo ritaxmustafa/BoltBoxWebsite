@@ -39,9 +39,9 @@ const Demo = () => {
         face and neck.
       </p>
       <div className={`grid3 ${style.guideWrapper}`}>
-        {guide.map((item) => {
+        {guide.map((item,index) => {
           return (
-            <div className={style.guideCard}>
+            <div className={style.guideCard} key={index}>
               <div>
                 <img src={item.images} alt="guide" className="w-100" />
                 <span className={style[item.title]}>{item.title === 'good' ? <AiOutlineCheck/> : <AiOutlineClose/>}</span>

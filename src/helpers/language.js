@@ -60,12 +60,14 @@ export const label = {
     country: "Shteti",
     city: "Qyteti",
     address: "Adresa",
-    agreeTerms: "Dakordo me kushtet dhe kushtetutat",
+    agreeTerms: "Pajtohem me kushtet e privatësisë",
     buy: "Blej",
     orderDetails: "Detajet e Porosisë",
     discount: "Zbritje",
     editOrder: "Edito Porosinë",
-    shipping: "Transporti"
+    shipping: "Transporti",
+    discountTextOrder: "Jemi të kënaqur t'ju informojmë se do të merrni një zbritje prej {{country?.discount}}€ në blerjen tuaj në faqen e pagesës pasi shteti i dërgesës është {country.name}.",
+    cityDiscount: "Nëse shteti juaj i dërgesës është {country.name}, ju merrni një zbritje prej {{country?.discount}}€. Kuponi për vendin e ardhshëm po vjen, kështu që sigurohuni të merrni paketën tuaj para se të jetë vonë!"
   },
   eng: {
     objectNo: "Pets no. in your portrait",
@@ -132,8 +134,10 @@ export const label = {
     orderDetails: "Order Details",
     discount: "Discount",
     editOrder: "Edit Order",
-    shipping: "Shipping"
-
+    shipping: "Shipping",
+    discountTextOrder:
+      "We are pleased to inform you that you will receive a  {{country?.discount}}€ discount on your purchase at the checkout page since your shipping country is  {country.name}.",
+    cityDiscount: "You get a {{country?.discount}}€ discount if your shipping country is {country.name}. The next country coupon is on the way, so get your package before it's too late!"
   },
   deu: {
     objectNo: "Haustier-Nr. in Ihrem Porträt",
@@ -200,7 +204,9 @@ export const label = {
     orderDetails: "Bestelldetails",
     discount: "Rabatt",
     editOrder: "Bestellung bearbeiten",
-    shipping: "Versand"
+    shipping: "Versand",
+    discountTextOrder: "Wir freuen uns, Ihnen mitzuteilen, dass Sie einen Rabatt von {{country?.discount}}€ auf Ihren Einkauf auf der Kassenseite erhalten, da Ihr Versandland {country.name} ist.",
+    cityDiscount: "Sie erhalten einen Rabatt von {{country?.discount}}€, wenn Ihr Versandland {country.name} ist. Der nächste Länder-Gutschein ist unterwegs, also sichern Sie sich Ihr Paket, bevor es zu spät ist!"
 
   },
 };

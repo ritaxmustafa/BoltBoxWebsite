@@ -64,8 +64,16 @@ form {
   margin-top: 50px;
 }
 .discountText{
-  font-size: 13px;
+  font-size: 15px;
   padding-top: 10px;
+  background-color: aquamarine;
+  padding:5px;
+  border-radius: 5px;
+}
+.discount span{
+  background-color: aquamarine;
+  padding:5px;
+  border-radius: 5px;
 }
 .checkoutSummaryMobile>p{
   display: none;

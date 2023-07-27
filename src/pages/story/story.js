@@ -23,10 +23,10 @@ const OurStory = () => {
              <h1>At BOLT, our mission is to bring as much joy to dogs as they bring to us. We believe that dogs and humans are truly better when we're together." </h1>
           
             <div className={style.storyDisplay}>
-              {image.map((item) => {
+              {image.map((item, index) => {
            
                 return (
-                  <img src={item.image} alt="error"/>
+                  <img src={item.image} alt="error" key={index}/>
                 )
               })}
               

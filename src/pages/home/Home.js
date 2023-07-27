@@ -54,9 +54,9 @@ const Home = () => {
             <Link to="">{label[lng].paintPet}</Link>
           </div>
           <div className="grid3">
-            {portrait.map((item) => {
+            {portrait.map((item, index) => {
               return (
-                <Link to="/order" className={style.homeCard}>
+                <Link to="/order" className={style.homeCard} key={index}>
                   <img src={item.image} alt="theme" className="w-100" />
                 </Link>
               );

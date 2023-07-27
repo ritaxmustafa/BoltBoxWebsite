@@ -222,10 +222,8 @@ const Checkout = () => {
                   <div>
                     {country.discount > 0 && (
                       <p className={style.discountText}>
-                        You get a {country.discount}&euro; discount if your
-                        shipping country is {country.name}. The next country
-                        coupon is on the way, so get your Kosovo package before
-                        it's too late!
+
+                        {label[lng].cityDiscount.replace("{{country?.discount}}", country?.discount).replace("{country.name}", country.name)}
                       </p>
                     )}
                   </div>
@@ -275,7 +273,7 @@ const Checkout = () => {
                       <div>
                         <div className={style.flex}>
                           {Object.values(order.orderInfo).map((t, k) => {
-                            return <p>{t.description}/</p>;
+                            return <p key={k}>{t.description}/</p>;
                           })}
                         </div>
                         <p>
@@ -311,7 +309,7 @@ const Checkout = () => {
                   </span>
                 </div>
                 {country.discount > 0 && (
-                  <div className="flex">
+                  <div className={`flex ${style.discount}`}>
                     <p> {label[lng].discount}</p>
                     <span>
                       -

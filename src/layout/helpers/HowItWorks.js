@@ -41,7 +41,7 @@ const HowItWorks = () => {
       <div className={style.contentWrapper}>
         <Heading text={"How BoltBox Works"} customStyle={"main"} />
         {hiw.map((i, j) => {
-          return <div className={`flex ${style.hiwContainer}`}>
+          return <div className={`flex ${style.hiwContainer}`} key={j}>
             <div className={style.iconWrapper}>
               <img src={`./images/general/${i.icon}`} alt="icon" width="80"/>
             </div>

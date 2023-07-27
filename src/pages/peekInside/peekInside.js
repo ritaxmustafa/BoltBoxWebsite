@@ -79,9 +79,9 @@ const Collection = () => {
             <div className="container ">
             <h1>Pet Portraits</h1>
             <div className="grid4">
-            {portrait.map((item) => {
+            {portrait.map((item, index) => {
               return (
-                <Link to="/order" className={style.homeCard}>
+                <Link to="/order" className={style.homeCard} key={index}>
                   <img src={item.image} alt="theme" className={style.w100} />
                 </Link>
               );

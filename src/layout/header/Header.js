@@ -55,7 +55,7 @@ const Header = () => {
             <ul className={style.languageList}>
               {Object.values(language).map((i, index) => {
                 return (
-                  <li onClick={() => changeLanguage(i.label)}>
+                  <li onClick={() => changeLanguage(i.label)} key={index}>
                     <img src={`../images/icons/${i.img}`} alt="language" />
                     {i.name}
                   </li>
@@ -82,7 +82,7 @@ const Header = () => {
               <ul className={style.languageListMob}>
                 {Object.values(language).map((i, index) => {
                   return (
-                    <li onClick={() => changeLanguage(i.label)}>
+                    <li onClick={() => changeLanguage(i.label)} key={index}>
                       <img src={`../images/icons/${i.img}`} alt="language" />
                       {i.name}
                     </li>

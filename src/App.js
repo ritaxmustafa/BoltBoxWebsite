@@ -26,6 +26,7 @@ function App() {
   useEffect(() => {
     let isCountrySelected = localStorage.getItem("country");
     if (isCountrySelected) {
+      console.log("isCountrySelected", isCountrySelected);
       dispatch(setCountry(isCountrySelected));
     }
     setTimeout(() => {

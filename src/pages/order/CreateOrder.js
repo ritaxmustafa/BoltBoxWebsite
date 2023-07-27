@@ -109,7 +109,7 @@ const CreateOrder = () => {
                   <div>
                     {country?.discount > 0 && (
                       <p className={style.discountText}>
-                        We are pleased to inform you that you will receive a  {country?.discount}€ discount on your purchase at the checkout page since your shipping country is  {country.name}.
+                        {label[lng].discountTextOrder.replace("{{country?.discount}}", country?.discount).replace("{country.name}", country.name)}
                       </p>
                     )}
                   </div>

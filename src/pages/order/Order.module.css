@@ -22,7 +22,13 @@
     margin: 20px 0px;
     gap: 30px;
 }
-
+.discountText{
+    font-size: 15px;
+    padding-top: 10px;
+    background-color: aquamarine;
+    padding:5px;
+    border-radius: 5px;
+}
 .productInfoModel img {
     width: 100%;
     cursor: pointer;
