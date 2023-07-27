@@ -6,7 +6,7 @@ const Contact = () => {
     return (
          <>
          <div className={style.contact}>
-            <img src="../images/general/paintphone.png" className="w-100" alt="contact" loading="lazy" />
+            <img src="/images/general/paintphone.png" className="w-100" alt="contact" loading="lazy" />
             <div className="container">
                 <h1>Do you have a question?</h1> 
                 <p>Our joyful team is here for you and your furry companion!</p>

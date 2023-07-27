@@ -169,7 +169,7 @@ function ProductInfoModel(props) {
                 return (
                   <div className={`${style.assetSingle} ${order?.orderInfo?.[info.type]?.id === info?.id && style.active}`} key={j}>
                     {
-                      info.icon ? <img  src={`../images/assets/${info.icon}`} alt={info.icon} onClick={() => props.updateOrderData(info)} /> :
+                      info.icon ? <img  src={`/images/assets/${info.icon}`} alt={info.icon} onClick={() => props.updateOrderData(info)} /> :
                       <div onClick={() => props.updateOrderData(info)} className={style.assetOption}>{label[lng][info.value]}</div>
                     }
                   </div>

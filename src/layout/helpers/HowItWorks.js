@@ -53,7 +53,7 @@ const HowItWorks = () => {
         })}
       </div>
       <div className={style.imageWrapper}>
-        <img src="../images/general/first.webp" alt="ger" className="w-100" loading="lazy" />
+        <img src={"/images/general/first.webp"} alt="ger" className="w-100" loading="lazy" />
       </div>
     </div>
   );

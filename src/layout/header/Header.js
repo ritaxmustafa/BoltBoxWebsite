@@ -26,7 +26,7 @@ const Header = () => {
     <div className={style.header}>
       <div className={`container flex ${style.desktopHeader}`}>
         <Link to="/" className={style.logo}>
-          <img src="../images/logo.svg" alt="logo" loading="lazy" />
+          <img src={"/images/logo.svg"} alt="logo" loading="lazy" />
         </Link>
         <ul>
           <li>
@@ -46,7 +46,7 @@ const Header = () => {
           <li className={style.language}>
             <div className={style.languageActive}>
               <img
-                src={`../images/icons/${language[lng].img}`}
+                src={`/images/icons/${language[lng].img}`}
                 alt="language"
               />
               {language[lng].name}
@@ -56,7 +56,7 @@ const Header = () => {
               {Object.values(language).map((i, index) => {
                 return (
                   <li onClick={() => changeLanguage(i.label)} key={index}>
-                    <img src={`../images/icons/${i.img}`} alt="language" />
+                    <img src={`/images/icons/${i.img}`} alt="language" />
                     {i.name}
                   </li>
                 );
@@ -68,13 +68,13 @@ const Header = () => {
       <div className={`${style.mobileNav} container`}>
         <div className={style.mobileDisplay}>
           <Link to="/" className={style.logo}>
-            <img src="../images/logo.svg" alt="logo" loading="lazy" />
+            <img src="/images/logo.svg" alt="logo" loading="lazy" />
           </Link>
           <div className={style.mobileList}>
             <li className={style.language}>
               <div className={style.languageActive}>
                 <img
-                  src={`../images/icons/${language[lng].img}`}
+                  src={`/images/icons/${language[lng].img}`}
                   alt="language"
                 />
                 <RiArrowDropDownFill />
@@ -83,7 +83,7 @@ const Header = () => {
                 {Object.values(language).map((i, index) => {
                   return (
                     <li onClick={() => changeLanguage(i.label)} key={index}>
-                      <img src={`../images/icons/${i.img}`} alt="language" />
+                      <img src={`/images/icons/${i.img}`} alt="language" />
                       {i.name}
                     </li>
                   );

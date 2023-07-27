@@ -11,31 +11,31 @@ const Home = () => {
 
   const portrait = [
     {
-      image: "../images/general/j9-min.webp",
+      image: "/images/general/j9-min.webp",
     },
     {
-      image: "../images/general/j8-min.webp",
+      image: "/images/general/j8-min.webp",
     },
     {
-      image: "../images/general/j7-min.webp",
+      image: "/images/general/j7-min.webp",
     },
     {
-      image: "../images/general/j6-min.webp",
+      image: "/images/general/j6-min.webp",
     },
     {
-      image: "../images/general/j5-min.webp",
+      image: "/images/general/j5-min.webp",
     },
     {
-      image: "../images/general/j4-min.webp",
+      image: "/images/general/j4-min.webp",
     },
     {
-      image: "../images/general/j3-min.webp",
+      image: "/images/general/j3-min.webp",
     },
     {
-      image: "../images/general/j2-min.webp",
+      image: "/images/general/j2-min.webp",
     },
     {
-      image: "../images/general/j1-min.webp",
+      image: "/images/general/j1-min.webp",
     },
   ];
 

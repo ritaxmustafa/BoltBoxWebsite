@@ -10,34 +10,34 @@ const SocialMedia = ({ page }) => {
 
   const slider = [
     {
-      image: "../images/general/ig1-min.webp",
+      image: "/images/general/ig1-min.webp",
     },
     {
-      image: "../images/general/ig2-min.webp",
+      image: "/images/general/ig2-min.webp",
     },
     {
-      image: "../images/general/ig3-min.webp",
+      image: "/images/general/ig3-min.webp",
     },
     {
-      image: "../images/general/ig4-min.webp",
+      image: "/images/general/ig4-min.webp",
     },
     {
-      image: "../images/general/ig5-min.webp",
+      image: "/images/general/ig5-min.webp",
     },
     {
-      image: "../images/general/ig1-min.webp",
+      image: "/images/general/ig1-min.webp",
     },
     {
-      image: "../images/general/ig2-min.webp",
+      image: "/images/general/ig2-min.webp",
     },
     {
-      image: "../images/general/ig3-min.webp",
+      image: "/images/general/ig3-min.webp",
     },
     {
-      image: "../images/general/ig4-min.webp",
+      image: "/images/general/ig4-min.webp",
     },
     {
-      image: "../images/general/ig5-min.webp",
+      image: "/images/general/ig5-min.webp",
     },
   ];
 

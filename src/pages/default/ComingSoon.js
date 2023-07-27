@@ -24,7 +24,7 @@ const ComingSoon = () => {
           <p>Your furry friend is going to be so happy! </p>
           <div className={style.paymentMessageFooter}>
             <p>Wait for us!</p>
-            <img src="../images/logo.svg" alt="logo" width={'250px'} loading="lazy" />
+            <img src={"/images/logo.svg"} alt="logo" width={'250px'} loading="lazy" />
 
           </div>
         </div>

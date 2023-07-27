@@ -4,26 +4,26 @@ import SubTitle from "../Components/Layout/subTitle";
 const Guide = () => {
   const guide = [
     {
-      images: "../images/kam.jpg",
+      images: "/images/kam.jpg",
       title: "GOOD",
-      icon: "../images/tick.png",
+      icon: "/images/tick.png",
       bad1: " Pet facing camera at eye level",
       bad2: "Great lighting",
       bad3: "Face & neck are clearly visible",
     },
     {
-      images: "../images/kam2.jpg",
+      images: "/images/kam2.jpg",
       title: "BAD",
-      icon: "../images/cancel.png",
+      icon: "/images/cancel.png",
       bad1: "Angled face & not at eye level",
       bad2: "Low lighting & heavy shadows",
       bad3: " Slightly blurry",
     },
     {
-      images: "../images/kam3.jpg",
+      images: "/images/kam3.jpg",
       title: "BAD",
       bad1: "Pet laying down",
-      icon: "../images/cancel.png",
+      icon: "/images/cancel.png",
       bad2: " Head & neck not completely visible",
       bad3: "Head & neck not completely visible",
     },

@@ -8,64 +8,64 @@ import { Link } from "react-router-dom";
 
 const portrait = [
     {
-      image: "../images/general/j9-min.webp",
+      image: "/images/general/j9-min.webp",
     },
     {
-      image: "../images/general/j8-min.webp",
+      image: "/images/general/j8-min.webp",
     },
     {
-      image: "../images/general/j7-min.webp",
+      image: "/images/general/j7-min.webp",
     },
     {
-      image: "../images/general/j6-min.webp",
+      image: "/images/general/j6-min.webp",
     },
     {
-      image: "../images/general/j5-min.webp",
+      image: "/images/general/j5-min.webp",
     },
     {
-      image: "../images/general/j4-min.webp",
+      image: "/images/general/j4-min.webp",
     },
     {
-      image: "../images/general/j3-min.webp",
+      image: "/images/general/j3-min.webp",
     },
     {
-      image: "../images/general/j2-min.webp",
+      image: "/images/general/j2-min.webp",
     },
     {
-      image: "../images/general/j1-min.webp",
+      image: "/images/general/j1-min.webp",
     },
     {
-        image: "../images/general/j9-min.webp",
+        image: "/images/general/j9-min.webp",
       },
       {
-        image: "../images/general/j8-min.webp",
+        image: "/images/general/j8-min.webp",
       },
       {
-        image: "../images/general/j7-min.webp",
+        image: "/images/general/j7-min.webp",
       },
       {
-        image: "../images/general/j6-min.webp",
+        image: "/images/general/j6-min.webp",
       },
       {
-        image: "../images/general/j5-min.webp",
+        image: "/images/general/j5-min.webp",
       },
       {
-        image: "../images/general/j4-min.webp",
+        image: "/images/general/j4-min.webp",
       },
       {
-        image: "../images/general/j3-min.webp",
+        image: "/images/general/j3-min.webp",
       },
       {
-        image: "../images/general/j2-min.webp",
+        image: "/images/general/j2-min.webp",
       },
       {
-        image: "../images/general/j1-min.webp",
+        image: "/images/general/j1-min.webp",
       },
       {
-        image: "../images/general/j4-min.webp",
+        image: "/images/general/j4-min.webp",
       },
       {
-        image: "../images/general/j3-min.webp",
+        image: "/images/general/j3-min.webp",
       },
   ];
 
@@ -73,7 +73,7 @@ const Collection = () => {
     return (
         <div className={style.collectionBck}>
             <div>
-                <img src="../images/general/img3.png" alt="color" className={style.collectionBanner} loading="lazy" />
+                <img src={"/images/general/img3.png"} alt="color" className={style.collectionBanner} loading="lazy" />
             </div>
          
             <div className="container ">

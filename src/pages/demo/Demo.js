@@ -4,26 +4,26 @@ import {AiOutlineCheck, AiOutlineClose} from "react-icons/ai";
 const Demo = () => {
   const guide = [
     {
-      images: "../images/general/kam.jpg",
+      images: "/images/general/kam.jpg",
       title: "good",
-      icon: "../images/tick.png",
+      icon: "/images/tick.png",
       bad1: " Pet facing camera at eye level",
       bad2: "Great lighting",
       bad3: "Face & neck are clearly visible",
     },
     {
-      images: "../images/general/kam2.jpg",
+      images: "/images/general/kam2.jpg",
       title: "bad",
-      icon: "../images/cancel.png",
+      icon: "/images/cancel.png",
       bad1: "Angled face & not at eye level",
       bad2: "Low lighting & heavy shadows",
       bad3: " Slightly blurry",
     },
     {
-      images: "../images/general/kam3.jpg",
+      images: "/images/general/kam3.jpg",
       title: "bad",
       bad1: "Pet laying down",
-      icon: "../images/cancel.png",
+      icon: "/images/cancel.png",
       bad2: " Head & neck not completely visible",
       bad3: "Head & neck not completely visible",
     },

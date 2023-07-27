@@ -21,7 +21,7 @@ const MainBanner = () => {
             </div>
           </div>
           <div className={style.bannerImage}>
-            <img src="../images/general/Banneri.webp" alt="banner" loading="lazy" />
+            <img src={"/images/general/Banneri.webp"} alt="banner" loading="lazy" />
           </div>
         </div>
       </div>

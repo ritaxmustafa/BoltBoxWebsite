@@ -17,7 +17,7 @@ function SelectModel(props) {
               className={` ${ order?.orderInfo?.[i.type]?.id === i.id && "active" }`}
               onClick={() => props.updateOrderData(i)}
             >
-              <img src={`../images/theme/${i.icon}`} alt="order creator" />
+              <img src={`/images/theme/${i.icon}`}  alt="order creator" />
             </div>
           );
         })}

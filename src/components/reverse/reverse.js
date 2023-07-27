@@ -4,13 +4,13 @@ import style from "./reverse.module.css";
 const Reverse = () => {
   const images = [
     {
-      image: "../images/general/pet.jpg",
+      image: "/images/general/pet.jpg",
       title: "Modern Designs Featuring Your Pet",
       content:
         "West & Willow pet portraits are the perfect minimalist decor to start your gallery wall, design a statement shelf, or as a gift for your pet loving friends and family.",
     },
     {
-      image: "../images/general/pc.webp",
+      image: "/images/general/pc.webp",
       title: "Artwork by Real Artists",
       content:
         "West & Willow Pet Portraits are hand-illustrated by our talented digital artists. Each portrait is created using a manual & highly technical design process. We do not use filters or apps.",

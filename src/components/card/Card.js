@@ -11,7 +11,7 @@ const Card = ({ data, functionCalled }) => {
     <Link to="/order" state = {{step:2}} onClick={()=>functionCalled(data)} className={style.cardWrapper}>
 
       <div className={style.cardImage}>
-        <img src={`../images/theme/${data.icon}`} alt="order creator" />
+        <img src={`/images/theme/${data.icon}`} alt="order creator" />
       </div>
       <div className="flex">
         <p>{label[lng][data.type]}: {data.value}</p>
