@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container">
         <div className="grid12">
           <div>
-            <img src="../images/logo.svg" alt="logo" width={150} />
+            <img src="../images/boltfooter.svg" alt="logo" width={150} />
             <h1>We challenge core assumptions.</h1>
             <p>info@bolx-box.com</p>
           </div>
@@ -18,14 +18,14 @@ const Footer = () => {
               <Link to="/OurStory" onClick={() => animateScroll.scrollToTop()}>Our Story</Link>
               <Link  to="/contact-us"  onClick={() => animateScroll.scrollToTop()}> Contact Us </Link>
               <Link to="/faq" onClick={() => animateScroll.scrollToTop()}>FAQs</Link>
-              <Link to="/image-guidelines" onClick={() => animateScroll.scrollToTop()}>  Photo Guide</Link>
+              <Link to="/demo" onClick={() => animateScroll.scrollToTop()}>  Photo Guide</Link>
             </div>
             <div className={style.footerSection}>
               <h1>OUR PRODUCTS</h1>
               <Link to="/OurStory" onClick={() => animateScroll.scrollToTop()}>Privacy Policy</Link>
               <Link  to="/contact-us"  onClick={() => animateScroll.scrollToTop()}> Contact Us </Link>
               <Link to="/faq" onClick={() => animateScroll.scrollToTop()}>FAQs</Link>
-              <Link to="/image-guidelines" onClick={() => animateScroll.scrollToTop()}>  Photo Guide</Link>
+              <Link to="/demo" onClick={() => animateScroll.scrollToTop()}>  Photo Guide</Link>
             </div>
             <div className={style.footerSection}>
               <h1>OUR PRODUCTS</h1>

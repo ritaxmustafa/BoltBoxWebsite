@@ -10,6 +10,9 @@ import ComingSoon from "../pages/default/ComingSoon";
 import Privacy from "../pages/privacy/Privacy";
 import Terms from "../pages/privacy/Terms";
 import Refund from "../pages/privacy/Refund";
+import Collection from "../pages/peekInside/peekInside";
+import OurStory from "../pages/story/story";
+import Contact from "../pages/contact/contact";
 
 function RouteConfig() {
   const location = useLocation();
@@ -29,6 +32,9 @@ function RouteConfig() {
       <Route path="/terms" element={<Terms />} />
       <Route path="/refund" element={<Refund />} />
       <Route path="/*" element={<Home />} />
+      <Route path="/theme" element={<Collection />} />
+      <Route path="/contact-us" element={<Contact />} />
+      <Route path="/OurStory" element={<OurStory/>} />
     </Routes>
   );
 }

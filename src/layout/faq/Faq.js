@@ -17,39 +17,36 @@ const FAQ = () => {
   const questions = [
     {
       id: 1,
-      question: "What makes a good photo?",
-      answer:
-        "1.) Close up time! Be sure your pets photo is taken in a well lit area. Ideally without a filter and in natural lighting. 2.) Close up and head on, showing as much of the ears, head, neck, and chest as possible. This will allow us to get a good crop of your pets face. 3.) Avoid overhead, overly filtered or blurry photos. We are typically unable to illustrate photos of your pet lying down. Review our Image Guidelines for more information.",
+      question: "Can I have more than one pet in the portrait?",
+      answer: "In our portrait offerings, you have the wonderful option of including up to 3 pets. ",
     },
     {
       id: 2,
-      question: "Can I have more than one pet in my portrait?",
-      answer: "You can install React by using npm or yarn package managers.",
+      question: "Which types of pet can you illustrate?",
+      answer:
+        "Absolutely! We take pride in crafting portraits for a wide array of unique pets worldwide. Whether you have adorable bunnies or pet birds, we've got you covered. If it's an animal, we'll create a portrait for it! Please be aware that currently, we do not create portraits of humans",
     },
     {
       id: 3,
-      question: "What animals do you illustrate?",
+      question: "What makes a great photo?",
       answer:
-        "Our portraits, greeting cards, and mugs can have up to 3 pets. All other products are currently limited to one pet.",
+        "1.) Get ready for a close-up! Ensure your pet's photo is taken in a well-lit area, preferably without a filter and using natural lighting. Capture the shot from the front, including the ears, head, neck, and chest to get a perfect crop of your pet's face. Avoid overhead, heavily filtered, or blurry pictures. Please refer to our Image Guidelines for more details, as we generally cannot illustrate photos of pets lying down.",
     },
+ 
+  
     {
       id: 4,
-      question: "How do I install React?",
+      question: "If you find the need to make changes to your order, what should you do?",
       answer:
-        "Yes! We create portraits for unique pets around the world. From cute bunnies to pet birds. Odds are, if its an animal, we will create a portrait for you. Please note: at this time we do not create portraits of humans (no matter how cute you are!).",
+        "Absolutely, we're here to assist you with any changes to your pet portrait order. To ensure we can make the necessary adjustments, kindly contact info@bolt-box.com within 30 minutes of placing your order. Please be aware that after 30 minutes, some changes, including address updates, may no longer be possible. It's essential to note that in certain instances, making alterations to orders might lead to shipping delays.",
     },
     {
       id: 5,
-      question: "What if I need to make a change to my order?",
+      question: "Are you able to preview your portrait before it is shipped to you?",
       answer:
-        "Yes! We are happy to help with changes to your pet portrait order as long as you reach out to support@westandwillow.com within 30 minutes of your order being placed. After 30 minutes most changes, including address updates, can no longer be made. Please note, in some cases, changes to orders may     result in shipping delays.",
+        "To expedite the delivery process, we do not provide artwork previews or proofs. However, if the photo you provided isn't suitable for the best portrait, we'll get in touch with you to request a new one. Please remember to review our Image Guidelines to ensure the ideal result.",
     },
-    {
-      id: 6,
-      question: "Can I preview my portrait before it ships?",
-      answer:
-        "In an effort to get your order to you as efficiently as possible, we do not offer artwork previews or proofs. But dont worry! If your provided photo won t make the best portrait, we’ll reach out to you for a new one. Be sure to review Image Guidelines here .",
-    },
+    
     // Add more questions and answers as needed
   ];
 
@@ -63,7 +60,7 @@ const FAQ = () => {
 
   return (
     <div className={style.faqBck}>
-      <Heading text={"Frequently Asked Questions"} customStyle={"main"} />
+      <Heading text={"FAQs"} customStyle={"main"} />
       {questions.map((q, index) => (
         <div
           key={q.id}

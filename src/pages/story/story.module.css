@@ -1,0 +1,41 @@
+.ourStory p {
+    text-align: left;
+}
+.ourStory h1 {
+    text-align: center;
+    padding: 20px 0px;
+    font-size: 38px;
+}
+.storyDisplay {
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+}
+.storyDisplay img {
+    width: 100%;
+}
+.boltLogo {
+    width: 70%;
+    margin: auto;
+    padding: 50px 0px;
+}
+.boltLogo img {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+}
+.boltLogo p {
+    padding-top: 20px;
+}
+@media (max-width: 800px) {
+    .boltLogo {
+        width: 100%;
+    }
+    .storyDisplay {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .boltLogo img {
+        height: 80px;
+    }
+}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import failed from "../../helpers/lotties/19230-payment-failed.json";
 import success from "../../helpers/lotties/101253-successful.json";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import style from "./PaymentMessage.module.css";
 import { useParams } from "react-router";
 

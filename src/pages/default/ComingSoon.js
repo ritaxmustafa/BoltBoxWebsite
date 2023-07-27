@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import failed from "../../helpers/lotties/19230-payment-failed.json";
 import success from "../../helpers/lotties/dog.json";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import style from "./ComingSoon.module.css";
 import { useParams } from "react-router";
 
