@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { label } from "../../helpers/language";
 import style from "./Modal.module.css";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import location from "../../helpers/lotties/location.json";
 import { setCountry } from "../../helpers/redux/slice";
 import CountrySelect from "../select/CountrySelect";

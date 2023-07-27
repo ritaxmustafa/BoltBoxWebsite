@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import loading from "../../helpers/lotties/loading-dog.json";
 import style from "./Loader.module.css";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 
 function Loader() {
   const defaultOptions = {

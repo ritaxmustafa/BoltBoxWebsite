@@ -9,6 +9,8 @@ import ProductInfoModel from "../../components/order/ProductInfoModel";
 import { Link, useLocation } from "react-router-dom";
 import CheckoutModal from "../../components/checkout/CheckoutModal";
 import HeadCrumbs from "../../components/crumbs/HeadCrumbs";
+import HowItWorks from "../../layout/helpers/HowItWorks";
+import Reverse from "../../components/reverse/reverse";
 
 const CreateOrder = () => {
   const location = useLocation();
@@ -130,6 +132,9 @@ const CreateOrder = () => {
       ) : (
         <Loader />
       )}
+<Reverse/>
+
+      <HowItWorks/>
     </div>
   );
 };

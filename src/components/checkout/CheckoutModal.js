@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { label } from "../../helpers/language";
 import style from "./CheckoutModal.module.css";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import dog from "../../helpers/lotties/dog.json";
 import { Link, useNavigate } from "react-router-dom";
 import {MdClose} from "react-icons/md";

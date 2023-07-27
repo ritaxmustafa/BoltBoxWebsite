@@ -1,0 +1,32 @@
+.cardsReverse {
+    flex-direction: row-reverse;
+}
+.cardsDisplay {
+    align-items: center;
+    display: flex;
+}
+.cardsDisplay:nth-last-child(1) {
+    padding-bottom: 50px;
+}
+.cardsDisplay img {
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.cardsDisplay {
+    padding-top: 50px;
+    text-align: left;
+    justify-content: space-between;
+}
+@media (max-width: 800px) {
+    .cardsDisplay {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cardsDisplay p {
+        padding-bottom: 10px;
+    }
+    .cardsDisplay h1 {
+        text-align: center;
+    }
+}

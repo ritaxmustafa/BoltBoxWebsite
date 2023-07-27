@@ -1,0 +1,38 @@
+.w100 {
+    width: 100%;
+    border: 10px solid #2f3133;
+    border-radius: 0px;
+}
+
+.collectionBck {
+    background: white;
+    color: black;
+    padding-bottom: 50px;
+}
+.collection-bck h1 {
+    /* text-align: left; */
+    padding: 50px 0px;
+}
+.collectionBanner {
+    border-radius: 0px 0px 50px 50px;
+    width: 100%;
+}
+.theme-display {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+}
+.theme-box {
+    border-radius: 0.5rem;
+    background-color: #f8f8f8;
+}
+.theme-box img {
+    border: 10px solid #2f3133;
+    display: block;
+    transition: 0.3s;
+    box-shadow: 0px 0px 4px 4px #00000020 !important;
+}
+.theme-box img:hover {
+    border: 10px solid #825f4b;
+}
