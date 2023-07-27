@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import { FiEdit2 } from "react-icons/fi";
 import CountrySelect from "../../components/select/CountrySelect";
 import { setCountry } from "../../helpers/redux/slice";
+import qs from "qs";
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ const Checkout = () => {
     address: Yup.string().min(3, "min3").max(50, "max50").required("required"),
     city: Yup.string().min(3, "min3").max(50, "max50").required("required"),
     zip: Yup.number("onlyNumber").required("required"),
-    termsAndConditions: Yup.bool().oneOf([true], 'agreeConditions'),
+    termsAndConditions: Yup.bool().oneOf([true], "agreeConditions"),
   });
 
   const calculateTotal = () => {
@@ -57,10 +58,9 @@ const Checkout = () => {
 
   const total = useMemo(() => calculateTotal(), [country]);
 
-  const changeCountry = (selectedCountry) =>{
+  const changeCountry = (selectedCountry) => {
     dispatch(setCountry(selectedCountry));
-
-  }
+  };
 
   return (
     <div className={style.checkoutWrapper}>
@@ -82,9 +82,8 @@ const Checkout = () => {
                 if (Object.keys(order.orderInfo).length == 0) {
                   navigate("/");
                 } else {
+                  setLoading(false);
 
-                  
-                  setLoading(true);
 
                   let orderInfo = values;
                   orderInfo.params = order.orderInfo;
@@ -92,17 +91,20 @@ const Checkout = () => {
                   orderInfo.images = order.images;
                   orderInfo.details = order.details;
 
-                  console.log("VALUES", orderInfo);
+                  
+                  console.log("order", orderInfo);
 
-                  // client.post("checkout", orderInfo).then((response) => {
-
-                  //   if (response.data.hasError) {
-                  //     setValidationError(response.data.msg);
-                  //   } else {
-                  //     window.open(response.data.url, "_self");
-                  //   }
-                  // });
-                  setLoading(false);
+                  client
+                    .post("/checkout", orderInfo)
+                    .then((response) => {
+                      console.log("RESPONSE", response);
+                      if (response.data.hasError) {
+                        setValidationError(response.data.msg);
+                        setLoading(false);
+                      } else {
+                        window.open(response.data.url, "_self");
+                      }
+                    });
                 }
               }}
             >
@@ -157,7 +159,7 @@ const Checkout = () => {
                     <div className="grid1">
                       <div className="inputWrapper">
                         <label>Country</label>
-                        <CountrySelect selectCountry = {changeCountry}/>
+                        <CountrySelect selectCountry={changeCountry} />
                       </div>
                     </div>
                     <div className="grid2">
@@ -205,12 +207,14 @@ const Checkout = () => {
                   </div>
                   <div className="grid1">
                     <label>
-                       <Field type="checkbox" name="termsAndConditions" />
-                        Une pajtohem me kushtet e
-                      privatesise
+                      <Field type="checkbox" name="termsAndConditions" />
+                      Une pajtohem me kushtet e privatesise
                     </label>
-                    {errors.termsAndConditions && <p className="errorTxt">{label[lng][errors.termsAndConditions]}</p>}
-
+                    {errors.termsAndConditions && (
+                      <p className="errorTxt">
+                        {label[lng][errors.termsAndConditions]}
+                      </p>
+                    )}
                   </div>
                   <div>
                     {country.discount > 0 && (
@@ -295,10 +299,14 @@ const Checkout = () => {
                     {parseFloat(country.shippingPrice).toFixed(2)} &euro;
                   </span>
                 </div>
-                {country.discount > 0 && <div className="flex">
-                  <p>Discount</p>
-                  <span>-{parseFloat(country.discount).toFixed(2)} &euro;</span>
-                </div>}
+                {country.discount > 0 && (
+                  <div className="flex">
+                    <p>Discount</p>
+                    <span>
+                      -{parseFloat(country.discount).toFixed(2)} &euro;
+                    </span>
+                  </div>
+                )}
                 <div className={`flex ${style.totalPrice}`}>
                   <p>Total</p>
                   <span>{total} &euro;</span>

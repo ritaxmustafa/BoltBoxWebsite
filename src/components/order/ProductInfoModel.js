@@ -49,8 +49,26 @@ function ProductInfoModel(props) {
       //Validate File Upload
       if(validateFile()){
 
-        const imageURLs = Array.from(files).map((file) => URL.createObjectURL(file));
-        dispatch(setImages(imageURLs));
+        // const imageURLs = Array.from(files).map((file) => URL.createObjectURL(file));
+
+
+        // Convert each selected image to a base64 encoded string
+        const imageDataPromises = Array.from(files).map((file) => {
+          return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+              resolve(reader.result);
+            };
+            reader.readAsDataURL(file);
+          });
+        });
+
+        // After all images are converted, update the imageDataList state
+        Promise.all(imageDataPromises).then((imageDataArray) => {
+          dispatch(setImages(imageDataArray));
+
+        });
+
         dispatch(setDetailsInfo(details));
         props.updatePageprops({ showChekout: true })
       }

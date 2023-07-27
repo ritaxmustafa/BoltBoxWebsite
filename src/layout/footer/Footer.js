@@ -42,6 +42,11 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div>
+          <p>Payment</p>
+          <img src="../images/paysera.svg" alt="logo" width={150} />
+
+        </div>
       </div>
     </div>
   );
