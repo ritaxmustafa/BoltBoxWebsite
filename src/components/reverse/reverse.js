@@ -13,7 +13,7 @@ const Reverse = () => {
       image: "/images/general/pc.webp",
       title: "Artwork by Real Artists",
       content:
-        "West & Willow Pet Portraits are hand-illustrated by our talented digital artists. Each portrait is created using a manual & highly technical design process. We do not use filters or apps.",
+        "BoltBox Pet Portraits are hand-illustrated by our talented digital artists. Each portrait is created using a manual & highly technical design process. We do not use filters or apps.",
       class: style.cardsReverse,
     },
   ];

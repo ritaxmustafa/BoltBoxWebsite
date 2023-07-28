@@ -207,7 +207,9 @@ select,
         grid-template-columns: 1fr 1fr;
     }
 }
-
+.swiper-container-horizontal > .swiper-scrollbar {
+    display: none;
+}
 @media (max-width: 400px) {
     h1 {
         font-size: 25px;

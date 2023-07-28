@@ -12,6 +12,7 @@ import HeadCrumbs from "../../components/crumbs/HeadCrumbs";
 import HowItWorks from "../../layout/helpers/HowItWorks";
 import Reverse from "../../components/reverse/reverse";
 import { label } from "../../helpers/language";
+import Slider from "../../components/slider/slider";
 
 const CreateOrder = () => {
   const location = useLocation();
@@ -71,7 +72,8 @@ const CreateOrder = () => {
   };
 
   return (
-    <div className={`container ${style.orderWrapper}`}>
+     <>
+      <div className={`container ${style.orderWrapper}`}>
       <HeadCrumbs title="Order" link="/order" />
       {!pageProps.loading ? (
         <>
@@ -135,7 +137,11 @@ const CreateOrder = () => {
       )}
       <Reverse/>
       <HowItWorks/>
+
+   
     </div>
+       <Slider/>
+     </>
   );
 };
 
