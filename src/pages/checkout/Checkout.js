@@ -120,7 +120,7 @@ const Checkout = () => {
                         <label>{label[lng].firstName}</label>
                         <Field
                           name="firstName"
-                          placeholder="Emri dhe Mbiemri"
+                          placeholder="Name and Surname"
                           autoComplete="off"
                           className={errors.firstName && style.inputError}
                         />
@@ -167,7 +167,7 @@ const Checkout = () => {
                         <label>{label[lng].city}</label>
                         <Field
                           name="city"
-                          placeholder="Prishtina"
+                          placeholder="City"
                           autoComplete="off"
                           className={errors.city && style.inputError}
                         />
@@ -179,7 +179,7 @@ const Checkout = () => {
                         <label>ZIP</label>
                         <Field
                           name="zip"
-                          placeholder="10000"
+                          placeholder="Postal Code"
                           autoComplete="off"
                           className={errors.zip && style.inputError}
                         />
@@ -193,7 +193,7 @@ const Checkout = () => {
                         <label>{label[lng].address}</label>
                         <Field
                           name="address"
-                          placeholder="Bregu i Diellit, H5"
+                          placeholder="Address"
                           autoComplete="off"
                           className={errors.address && style.inputError}
                         />
