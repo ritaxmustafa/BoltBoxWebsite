@@ -12,9 +12,18 @@
 .selectImageWrapper{
   display: flex;
   margin:20px 0px;
+  width: 100%;
+  
 }
 .selectImageWrapper div{
+  
+  width: 100%;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+  color: #000;
   cursor: pointer;
 }
 .selectImageWrapper div:hover img{
@@ -22,8 +31,15 @@
   transition: 0.5s;
 }
 .selectImageWrapper img{
+  transition: 0.5s;
+  box-shadow: 0 0.125rem 0.25rem #00000020 !important;
+  margin-bottom: 10px;
+  background-color: #f8f8f8;
+  border-radius: var(--radius-image);
   width: 100%;
-  box-shadow: 0 0.125rem 0.25rem #00000020
+  object-fit: contain;
+  height: 250px;
+  padding:20px;
 }
 
 .assetSingle{

@@ -21,7 +21,6 @@ function MainModal() {
   };
 
   const selectCountry = (data) => {
-    console.log("DAT", data);
     setSelectedCountry(data);
   };
 
@@ -29,9 +28,6 @@ function MainModal() {
     if (selectedCountry) {
       dispatch(setCountry(selectedCountry));
       //Add country to localstorage
-
-      console.log("selectedCountry", selectedCountry);
-
       localStorage.setItem("country", selectedCountry);
     } else setError(true);
   };

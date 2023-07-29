@@ -63,9 +63,6 @@ const Checkout = () => {
   const changeCountry = (selectedCountry) => {
     dispatch(setCountry(selectedCountry));
   };
-
-  console.log("order", order);
-
   return (
     <div className={style.checkoutWrapper}>
       {uploadImageModal && (

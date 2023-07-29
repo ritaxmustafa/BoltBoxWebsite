@@ -6,13 +6,14 @@ import Loader from "../../components/loader/Loader";
 import { setOrderInfo } from "../../helpers/redux/slice";
 import SelectModel from "../../components/order/SelectModel";
 import ProductInfoModel from "../../components/order/ProductInfoModel";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import CheckoutModal from "../../components/checkout/CheckoutModal";
 import HeadCrumbs from "../../components/crumbs/HeadCrumbs";
 import HowItWorks from "../../layout/helpers/HowItWorks";
 import Reverse from "../../components/reverse/reverse";
 import { label } from "../../helpers/language";
 import Slider from "../../components/slider/slider";
+import { Circles } from "react-loader-spinner";
 
 const CreateOrder = () => {
   const location = useLocation();
@@ -25,6 +26,7 @@ const CreateOrder = () => {
     currentStep: propsData?.step ? propsData.step : 1,
     loading: true,
     showChekout: false,
+    loadImage: true,
   });
 
   const updatePageprops = (data) => {
@@ -68,81 +70,115 @@ const CreateOrder = () => {
       });
   };
 
+  useEffect(() => {
+    //Get steps
+    updatePageprops({ loadImage: true });
+
+    setTimeout(function () {
+      updatePageprops({ loadImage: false });
+    }, 1000);
+  }, [order.orderInfo]);
+
   return (
-     <>
+    <>
       <div className={`container ${style.orderWrapper}`}>
-      <HeadCrumbs title="Order" link="/order" />
-      {!pageProps.loading ? (
-        <>
-          {/* Stepi ku pyetet per no. e kafsheve */}
-          {pageProps.currentStep === 1 || !order?.orderInfo?.objectNo ? (
-            <SelectModel
-              data={pageProps.stepOptions[pageProps.currentStep]}
-              step={pageProps.currentStep}
-              updateOrderData={updateOrderData}
-              updateStep={updateStep}
-            ></SelectModel>
-          ) : (
-            <div>
-              <div className={style.productInfoModel}>
-                <div>
-                  <div className={style.imageWall}>
-                    <div className={style.frameWall}>
-                      {order?.orderInfo?.["objectNo"]?.icon &&
-                      order?.orderInfo?.["avatar"]?.icon ? (
-                        <img
-                          src={`./images/theme/${
-                            order?.orderInfo?.["objectNo"]?.id +
-                            "" +
-                            order?.orderInfo?.["avatar"]?.id
-                          }.jpg`}
-                          alt="Portait"
-                        />
+        <HeadCrumbs title="Order" link="/order" />
+        {!pageProps.loading ? (
+          <>
+            {/* Stepi ku pyetet per no. e kafsheve */}
+            {pageProps.currentStep === 1 || !order?.orderInfo?.objectNo ? (
+              <SelectModel
+                data={pageProps.stepOptions[pageProps.currentStep]}
+                step={pageProps.currentStep}
+                updateOrderData={updateOrderData}
+                updateStep={updateStep}
+              ></SelectModel>
+            ) : (
+              <div>
+                <div className={style.productInfoModel}>
+                  <div>
+                    <div className={style.imageWall}>
+                      {!pageProps.loadImage ? (
+                        <div
+                          className={`${style.frame} ${
+                            style?.["frame" + order?.orderInfo?.frame?.value]
+                          }`}
+                        >
+                          <div
+                            className={`${style.frameWall}  ${
+                              order?.orderInfo?.["objectNo"].id == 1 &&
+                              style.vertical
+                            }`}
+                          >
+                            {order?.orderInfo?.["objectNo"]?.icon &&
+                            order?.orderInfo?.["avatar"]?.icon ? (
+                              <img
+                                src={`./images/theme/${
+                                  order?.orderInfo?.["objectNo"]?.id +
+                                  "" +
+                                  order?.orderInfo?.["avatar"]?.id
+                                }.jpg`}
+                                alt="Portait"
+                              />
+                            ) : (
+                              <img
+                                src={`./images/theme/${order?.orderInfo?.["objectNo"]?.icon}`}
+                                alt="Portait"
+                              />
+                            )}
+                          </div>{" "}
+                        </div>
                       ) : (
-                        <img
-                          src={`./images/theme/${order?.orderInfo?.["objectNo"]?.icon}`}
-                          alt="Portait"
-                        />
+                        <div>
+                          <Circles
+                            height="80"
+                            width="80"
+                            color="#00abd6"
+                            ariaLabel="circles-loading"
+                            wrapperStyle={{}}
+                            wrapperClass=""
+                            visible={true}
+                          />
+                        </div>
+                      )}
+                    </div>
+                    <h1 className={style.priceTotal}>
+                      {label[lng].price}: {order.price} &euro;
+                    </h1>
+                    <div>
+                      {country?.discount > 0 && (
+                        <p className={style.discountText}>
+                          {label[lng].discountTextOrder
+                            .replace("{{country?.discount}}", country?.discount)
+                            .replace("{country.name}", country.name)}
+                        </p>
                       )}
                     </div>
                   </div>
-                  <h1 className={style.priceTotal}>
-                    {label[lng].price}: {order.price} &euro;
-                  </h1>
-                  <div>
-                    {country?.discount > 0 && (
-                      <p className={style.discountText}>
-                        {label[lng].discountTextOrder
-                          .replace("{{country?.discount}}", country?.discount)
-                          .replace("{country.name}", country.name)}
-                      </p>
-                    )}
-                  </div>
+                  <ProductInfoModel
+                    data={pageProps.stepOptions}
+                    step={pageProps.currentStep}
+                    updateOrderData={updateOrderData}
+                    updateStep={updateStep}
+                    updatePageprops={updatePageprops}
+                  />
                 </div>
-                <ProductInfoModel
-                  data={pageProps.stepOptions}
-                  step={pageProps.currentStep}
-                  updateOrderData={updateOrderData}
-                  updateStep={updateStep}
-                  updatePageprops={updatePageprops}
-                />
               </div>
-            </div>
-          )}
-          {pageProps.showChekout && (
-            <CheckoutModal
-              onClose={() => updatePageprops({ showChekout: false })}
-            />
-          )}
-        </>
-      ) : (
-        <Loader />
-      )}
-      <Reverse/>
-      <HowItWorks/>
-    </div>
-       <Slider/>
-     </>
+            )}
+            {pageProps.showChekout && (
+              <CheckoutModal
+                onClose={() => updatePageprops({ showChekout: false })}
+              />
+            )}
+          </>
+        ) : (
+          <Loader />
+        )}
+        <Reverse />
+        <HowItWorks />
+      </div>
+      <Slider />
+    </>
   );
 };
 

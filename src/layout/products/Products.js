@@ -16,7 +16,6 @@ const Products = () => {
     //Get steps
     client.get("assets").then((response) => {
       setProductOptions( response.data[1]);
-      console.log("response",response.data[2])
     });
   }, []);
 

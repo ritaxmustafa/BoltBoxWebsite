@@ -14,8 +14,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const { country } = useSelector((state) => state.global);
 
-
-
   const showComponent = () => {
     if (location.pathname === "/payment/failed") return false;
     if (location.pathname === "/payment/success") return false;
@@ -26,7 +24,6 @@ function App() {
   useEffect(() => {
     let isCountrySelected = localStorage.getItem("country");
     if (isCountrySelected) {
-      console.log("isCountrySelected", isCountrySelected);
       dispatch(setCountry(isCountrySelected));
     }
     setTimeout(() => {
@@ -34,10 +31,8 @@ function App() {
     }, 2000);
   }, []);
 
-
-  
   useEffect(() => {
-    if(location.pathname !== "/order")  setLoading(true);
+    if (location.pathname !== "/order") setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 1000);
@@ -45,17 +40,11 @@ function App() {
 
   return (
     <>
-      {!loading ? (
-        <>
-          <Header />
-          <RouteConfig />
-          <Footer />
-          {showComponent() && <MainModal />}
-        </>
-      ) : (
-        <Loader />
-
-      )}
+      {loading && <Loader />}
+      <Header />
+      <RouteConfig />
+      <Footer />
+      {showComponent() && <MainModal />}
     </>
   );
 }
