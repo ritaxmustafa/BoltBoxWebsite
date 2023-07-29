@@ -44,8 +44,10 @@ const Footer = () => {
         </div>
         <div>
           <p>Payment</p>
-          <img src={"/images/paysera.svg"} alt="logo" width={150} loading="lazy" />
-
+          <div className={`  ${style.paymentDisplay}`}>
+          <img src={"/images/paysera.svg"} alt="logo" width={120} loading="lazy" />
+          <img src={"/images/mastercard.svg"} alt="logo" width={70} loading="lazy" />
+          </div>
         </div>
       </div>
     </div>

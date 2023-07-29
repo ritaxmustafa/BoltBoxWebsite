@@ -255,7 +255,7 @@ const Checkout = () => {
                             order?.orderInfo?.["objectNo"]?.id +
                             "" +
                             order?.orderInfo?.["avatar"]?.id
-                          }.png`}
+                          }.jpg`}
                           alt="Portait"
                         />
                       ) : (

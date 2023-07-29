@@ -9,6 +9,18 @@
     display: flex;
     flex-direction: column;
 }
+.paymentDisplay {
+    display: flex;
+    align-items: center;
+}
+.paymentDisplay img {
+    margin-right: 20px;
+}
+.paymentDisplay img:nth-child(2) {
+    background-color: white;
+    padding: 5px 13px;
+    border-radius: 6px;
+}
 .footerSection h1 {
     font-size: 18px;
     font-weight: bold;

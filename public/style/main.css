@@ -86,7 +86,6 @@ h1 {
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
     column-gap: 10px;
-    row-gap: 20px;
 }
 .btn {
     background-color: var(--main);

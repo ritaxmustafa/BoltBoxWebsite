@@ -1,128 +1,144 @@
 .orderWrapper {
-  padding: 40px;
-  /* background-color: var(--light-main); */
-  border-radius: var(--radius-image);
-  margin: 0px auto;
-  min-height: 60vh;
+    padding: 40px;
+    /* background-color: var(--light-main); */
+    border-radius: var(--radius-image);
+    margin: 0px auto;
+    min-height: 60vh;
 }
 .orderFooter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: var(--main);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--main);
 }
 .orderFooter p {
-  padding: 5px 0px 0px 0px;
-  margin: 0px;
+    padding: 5px 0px 0px 0px;
+    margin: 0px;
 }
 .productInfoModel {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  margin: 20px 0px;
-  gap: 30px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    margin: 20px 0px;
+    gap: 30px;
 }
 .discountText {
-  font-size: 15px;
-  padding-top: 10px;
-  background-color: aquamarine;
-  padding: 5px;
-  border-radius: 5px;
+    font-size: 15px;
+    padding-top: 10px;
+    background-color: aquamarine;
+    padding: 5px;
+    border-radius: 5px;
 }
 .productInfoModel img {
-  width: 100%;
-  cursor: pointer;
+    width: 100%;
+    cursor: pointer;
 }
 .priceTotal {
-  font-weight: bold;
-  color: var(--main);
+    font-weight: bold;
+    color: var(--main);
+}
+.priceTotal span {
+    position: relative;
+    text-decoration: line-through;
+    text-decoration-color: red;
 }
 .imageWall {
-  padding: 50px;
-  background-color: #f8f8f8;
-  border-radius: var(--radius-image);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-height: 550px;
-  min-height: 550px;
-  transition: 0.5s;
-  position: relative;
+    padding: 50px;
+    background-color: #f8f8f8;
+    border-radius: var(--radius-image);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 550px;
+    min-height: 550px;
+    transition: 0.5s;
+    position: relative;
 }
-.loadingImage{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  border-radius: var(--radius-image);
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  z-index: 99;
+.loadingImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: var(--radius-image);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    z-index: 99;
 }
-.modalLottie{
-  width: 250px;
-  margin: 0px auto;
+.modalLottie {
+    width: 250px;
+    margin: 0px auto;
 }
 .frameWall {
-  object-fit: cover;
-  margin: auto;
-  transition: 0.5s;
-  max-height: 450px;
-  display: flex;
-
+    object-fit: cover;
+    margin: auto;
+    transition: 0.5s;
+    max-height: 450px;
+    display: flex;
 }
-.vertical{
-  height: 450px !important;
+.vertical {
+    height: 450px !important;
 }
-.loadImage{
-  width: 150px;
-  height: 150px;
+.loadImage {
+    width: 150px;
+    height: 150px;
 }
-.frame{
-  transition: 0.5s;
+.frame {
+    transition: 0.5s;
 }
 .frameblack {
-  margin:50px auto;
-  border:25px solid #222;
-  -webkit-box-shadow:  px 2px 3px 1px rgba(0, 0, 0, .5);
-  box-shadow:  0px 3px 10px 4px rgba(0, 0, 0, .3);
-  height: fit-content;
-  transition: 0.5s;
-
+    margin: 50px auto;
+    border: 25px solid #222;
+    -webkit-box-shadow: px 2px 3px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
+    height: fit-content;
+    transition: 0.5s;
 }
-.framewood{
-    border:25px solid transparent;
-  border-image: url("https://thumbs.dreamstime.com/b/sheet-veneer-as-natural-wood-background-texture-seamless-sheet-veneer-lacquered-oak-natural-wood-pattern-as-105756936.jpg") 25;
-  margin:50px auto;
-  -webkit-box-shadow:  px 2px 3px 1px rgba(0, 0, 0, .5);
-  box-shadow:  0px 3px 10px 4px rgba(0, 0, 0, .3);
-  height: fit-content;
-  transition: 0.5s;
-
+.framewood {
+    border: 25px solid transparent;
+    border-image: url('https://thumbs.dreamstime.com/b/sheet-veneer-as-natural-wood-background-texture-seamless-sheet-veneer-lacquered-oak-natural-wood-pattern-as-105756936.jpg')
+        25;
+    margin: 50px auto;
+    -webkit-box-shadow: px 2px 3px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
+    height: fit-content;
+    transition: 0.5s;
 }
-.framewhite{
-  margin:50px auto;
-  border:25px solid #fff;
-  -webkit-box-shadow:  px 2px 3px 1px rgba(0, 0, 0, .5);
-  box-shadow:  0px 3px 10px 4px rgba(0, 0, 0, .3);
-  height: fit-content;
-  transition: 0.5s;
-
+.framewhite {
+    margin: 50px auto;
+    border: 25px solid #fff;
+    -webkit-box-shadow: px 2px 3px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
+    height: fit-content;
+    transition: 0.5s;
 }
 .frameWall img {
-  height: 100%;
-  transition: 0.5s;
-  object-fit: contain;
+    height: 100%;
+    transition: 0.5s;
+    object-fit: contain;
 }
 @media (max-width: 800px) {
-  .orderWrapper {
-    padding: 20px;
-    padding-top: 30px;
-  }
-  .productInfoModel {
-    grid-template-columns: 1fr;
-  }
+    .orderWrapper {
+        padding: 20px;
+        padding-top: 30px;
+    }
+    .productInfoModel {
+        grid-template-columns: 1fr;
+    }
+    .vertical {
+        height: unset !important;
+    }
+    .framewood {
+        border: 15px solid transparent;
+        border-image: url('https://thumbs.dreamstime.com/b/sheet-veneer-as-natural-wood-background-texture-seamless-sheet-veneer-lacquered-oak-natural-wood-pattern-as-105756936.jpg')
+            25;
+    }
+    .frameblack {
+        border: 15px solid #222;
+    }
+    .framewhite {
+        border: 15px solid #fff;
+    }
 }

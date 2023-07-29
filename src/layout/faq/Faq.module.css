@@ -47,6 +47,7 @@
     padding: 0px 1rem;
     transition: max-height 0.3s ease;
 }
+
 .faqBck,
 .faqContainer {
     background-color: hsl(192, 100%, 42%, 0.1);
@@ -78,5 +79,8 @@
     .arrow {
         font-size: 14px;
         transition: transform 0.3s ease;
+    }
+    .faqBck p {
+        text-align: center;
     }
 }

@@ -142,9 +142,13 @@ const CreateOrder = () => {
                         </div>
                       )}
                     </div>
+                    {country?.discount > 0 ? (
                     <h1 className={style.priceTotal}>
-                      {label[lng].price}: {order.price} &euro;
-                    </h1>
+                      {label[lng].price}:<span>{order.price} &euro;</span>  {(order.price - 20).toFixed(2)} &euro;
+                    </h1>) :
+                    (<h1 className={style.priceTotal}>
+                      {label[lng].price}:{order.price} &euro; 
+                    </h1>)}
                     <div>
                       {country?.discount > 0 && (
                         <p className={style.discountText}>
