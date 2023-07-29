@@ -50,8 +50,8 @@ function App() {
           <Header />
           <RouteConfig />
           <Footer />
-          {/* {showComponent() && <MainModal />} */}
-          <MainModal />
+          {showComponent() && <MainModal />}
+          
         </>
       ) : (
         <Loader />
