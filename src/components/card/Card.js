@@ -5,7 +5,7 @@ import { label } from "../../helpers/language";
 import { useSelector } from "react-redux";
 
 const Card = ({ data, functionCalled }) => {
-  const { order, lng } = useSelector((state) => state.global);
+  const { country,order, lng } = useSelector((state) => state.global);
 
   return (
     <Link
@@ -18,6 +18,7 @@ const Card = ({ data, functionCalled }) => {
         <img src={`/images/theme/${data.icon}`} alt="order creator" />
       </div>
       <div className="flex">
+        
         <p>
           {label[lng][data.type]}: {data.value}
         </p>
@@ -28,7 +29,8 @@ const Card = ({ data, functionCalled }) => {
           /* Available Props */
         />
       </div>
-      <span>{data.price} &euro;</span>
+      {country?.discount > 0 ? (
+     <div className={style.headerPrice}>  <span>{data.price} &euro;</span><p>{(data.price - 20).toFixed(2) } &euro;</p></div>) : (<span>{data.price} &euro;</span>)}
     </Link>
   );
 };

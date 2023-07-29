@@ -1,47 +1,57 @@
 .cardWrapper {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 20px;
-  color: #000;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+    color: #000;
 }
-
+.headerPrice {
+    display: flex;
+    align-items: center;
+}
+.headerPrice span {
+    text-decoration: line-through;
+    text-decoration-color: red;
+    padding-right: 10px;
+}
+.headerPrice p {
+    font-size: 20px;
+}
 .cardImage {
-  transition: 0.5s;
-  box-shadow: 0 0.125rem 0.25rem #00000020 !important;
-  margin-bottom: 10px;
-  background-color: #f8f8f8;
-  border-radius: var(--radius-image);
-  width: 100%;
-  height: 250px;
-  padding:20px;
+    transition: 0.5s;
+    box-shadow: 0 0.125rem 0.25rem #00000020 !important;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    border-radius: var(--radius-image);
+    width: 100%;
+    height: 250px;
+    padding: 20px;
 }
-.cardWrapper span{
-  font-size: 20px;
+.cardWrapper span {
+    font-size: 20px;
 }
 .cardImage img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 .cardWrapper:hover .cardImage {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
-
 @media (max-width: 800px) {
-  .cardWrapper{
-    padding:0px;
-  }
-  .cardImage+div{
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: start;
-    justify-content: flex-start;
-    position: relative;
-  }
+    .cardWrapper {
+        padding: 0px;
+    }
+    .cardImage + div {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: start;
+        justify-content: flex-start;
+        position: relative;
+    }
 
-  .cardImage+div p{
-    font-size: 14px;
-  }
+    .cardImage + div p {
+        font-size: 14px;
+    }
 }
