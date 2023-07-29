@@ -16,6 +16,7 @@ function ProductInfoModel(props) {
   const [details, setDetails] = useState([]);
 
   const generateGrid = (data) => {
+    
     return "grid" + data.length;
   };
 

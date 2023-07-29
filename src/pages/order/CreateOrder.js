@@ -26,7 +26,6 @@ const CreateOrder = () => {
     showChekout: false,
   });
 
-
   const updatePageprops = (data) => {
     //Update state-in pa i fshi vlerat e tjera ekzistuese
     setPageProps((prevState) => ({
@@ -35,9 +34,7 @@ const CreateOrder = () => {
     }));
   };
 
-
   useEffect(() => {
-
     //Get steps
     client.get("assets").then((response) => {
       updatePageprops({ stepOptions: response.data, loading: false });
@@ -87,29 +84,35 @@ const CreateOrder = () => {
             <div>
               <div className={style.productInfoModel}>
                 <div>
-                  {order?.orderInfo?.["objectNo"]?.icon &&
-                  order?.orderInfo?.["avatar"]?.icon ? (
-                    <img
-                      src={`./images/theme/${
-                        order?.orderInfo?.["objectNo"]?.id +
-                        "" +
-                        order?.orderInfo?.["avatar"]?.id
-                      }.png`}
-                      alt="Portait"
-                    />
-                  ) : (
-                    <img
-                      src={`./images/theme/${order?.orderInfo?.["objectNo"]?.icon}`}
-                      alt="Portait"
-                    />
-                  )}
+                  <div className={style.imageWall}>
+                    <div className={style.frameWall}>
+                      {order?.orderInfo?.["objectNo"]?.icon &&
+                      order?.orderInfo?.["avatar"]?.icon ? (
+                        <img
+                          src={`./images/theme/${
+                            order?.orderInfo?.["objectNo"]?.id +
+                            "" +
+                            order?.orderInfo?.["avatar"]?.id
+                          }.jpg`}
+                          alt="Portait"
+                        />
+                      ) : (
+                        <img
+                          src={`./images/theme/${order?.orderInfo?.["objectNo"]?.icon}`}
+                          alt="Portait"
+                        />
+                      )}
+                    </div>
+                  </div>
                   <h1 className={style.priceTotal}>
-                  {label[lng].price}: {order.price} &euro;
+                    {label[lng].price}: {order.price} &euro;
                   </h1>
                   <div>
                     {country?.discount > 0 && (
                       <p className={style.discountText}>
-                        {label[lng].discountTextOrder.replace("{{country?.discount}}", country?.discount).replace("{country.name}", country.name)}
+                        {label[lng].discountTextOrder
+                          .replace("{{country?.discount}}", country?.discount)
+                          .replace("{country.name}", country.name)}
                       </p>
                     )}
                   </div>
@@ -133,8 +136,8 @@ const CreateOrder = () => {
       ) : (
         <Loader />
       )}
-      <Reverse/>
-      <HowItWorks/>
+      <Reverse />
+      <HowItWorks />
     </div>
   );
 };

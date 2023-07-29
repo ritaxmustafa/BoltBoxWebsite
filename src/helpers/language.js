@@ -7,7 +7,7 @@ export const label = {
     black: "E zezë",
     wood: "Druri",
     white: "E bardhë",
-    noframe: "Pa kornizë",
+    noframe: "Pa kornizë/ Canvas",
     fillDetails: "Ju lutem plotësoni emrat që do të shfaqen në pikturë",
     uploadFile: "Ju lutem ngarkoni fotografinë",
     allowdImageExtension:
@@ -77,7 +77,7 @@ export const label = {
     black: "Black",
     wood: "Wood",
     white: "White",
-    noframe: "No frame",
+    noframe: "No frame/ Canvas",
     fillDetails: "Please fill in the names that will appear in the picture ",
     uploadFile: "Please upload your animal picture",
     allowdImageExtension:
@@ -147,7 +147,7 @@ export const label = {
     black: "Schwarz",
     wood: "Holz",
     white: "Weiß",
-    noframe: "Kein Rahmen",
+    noframe: "Kein Rahmen/ Canvas",
     fillDetails:
       "Bitte geben Sie die Namen ein, die auf dem Bild erscheinen sollen",
     uploadFile: "Bitte laden Sie Ihr Tierbild hoch",
