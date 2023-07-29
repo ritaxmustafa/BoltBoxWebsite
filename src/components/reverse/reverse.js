@@ -1,13 +1,16 @@
 import React from "react";
 import style from "./reverse.module.css";
-
+import { Link } from "react-router-dom";
+import { label } from "../../helpers/language";
+import { useSelector } from "react-redux";
 const Reverse = () => {
+  const { lng } = useSelector((state) => state.global);
   const images = [
     {
       image: "/images/general/pet.jpg",
       title: "Modern Designs Featuring Your Pet",
       content:
-        "West & Willow pet portraits are the perfect minimalist decor to start your gallery wall, design a statement shelf, or as a gift for your pet loving friends and family.",
+        "BoltBox  pet portraits are the perfect minimalist decor to start your gallery wall, design a statement shelf, or as a gift for your pet loving friends and family.",
     },
     {
       image: "/images/general/pc.webp",
@@ -25,6 +28,7 @@ const Reverse = () => {
             <div className="w49">
               <h1>{item.title}</h1>
               <p>{item.content}</p>
+              <Link to="/order">{label[lng].paintPet}</Link>
             </div>
             <div className="w49">
               <img src={item.image} className="w-100" />

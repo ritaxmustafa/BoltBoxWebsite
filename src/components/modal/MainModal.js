@@ -6,6 +6,7 @@ import { useLottie } from "lottie-react";
 import location from "../../helpers/lotties/location.json";
 import { setCountry } from "../../helpers/redux/slice";
 import CountrySelect from "../select/CountrySelect";
+import Language from "../language/language";
 
 function MainModal() {
   const dispatch = useDispatch();
@@ -40,7 +41,10 @@ function MainModal() {
 
   return (
     <div className={style.checkoutModal}>
+   
       <div className={style.checkoutBody}>
+       
+      <Language/>
         <div className={style.modalLottie}>
           {View}
         </div>
