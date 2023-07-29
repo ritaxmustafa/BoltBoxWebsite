@@ -106,7 +106,13 @@
     align-items: center;
     font-size: 13px;
 }
-
+.mobileBtn {
+    display: block;
+    text-align: center !important;
+}
+.mobileMenuContainer li {
+    padding-bottom: 20px !important;
+}
 .hamburgerMenu {
     background-color: #fff;
 

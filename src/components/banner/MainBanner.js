@@ -16,8 +16,8 @@ const MainBanner = () => {
             <h1>{label[lng].bannerTitle}  </h1>
             <p>{label[lng].bannerDesc} </p>
             <div className={style.bannerButton}>
-              <Link to="" className="btn">{label[lng].paintPet}</Link>
-              <Link to="" className="btnLight">{label[lng].gift}</Link>
+              <Link to="/order" className="btn">{label[lng].paintPet}</Link>
+              {/* <Link to="" className="btnLight">{label[lng].gift}</Link> */}
             </div>
           </div>
           <div className={style.bannerImage}>

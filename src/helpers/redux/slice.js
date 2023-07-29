@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-  lng: "alb",
+  lng: "eng",
   country: "",
   order: {
     details: [],

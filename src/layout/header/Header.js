@@ -111,6 +111,45 @@ const Header = () => {
                 Monthly Themes
               </Link>
             </li>
+            <li>
+              <Link
+                to="/OurStory"
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                Our Story
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact-us"
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+               Contact Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/demo"
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                Photo Guide
+              </Link>
+            </li>
+            <li>
+            <Link
+              to="/order"
+              onClick={() => animateScroll.scrollToTop()}
+              className={`btn ${style.mobileBtn}`}
+            >
+              {label[lng].orderNow}{" "}
+            </Link>
+          </li>
           </ul>
         </div>
       </div>

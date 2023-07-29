@@ -81,7 +81,7 @@ const Collection = () => {
             </div>
          
             <div className="container ">
-            <h1>Pet Portraits</h1>
+            <h1 className={style.mainHeader}>Pet Portraits</h1>
             <div className="grid4">
             {portrait.map((item, index) => {
               return (
