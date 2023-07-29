@@ -1,39 +1,39 @@
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  background-color: white;
-  padding: 10px 0px;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
+    padding: 10px 0px;
 }
 .logo {
-  width: 200px;
+    width: 200px;
 }
 .logo img {
-  width: 100%;
+    width: 100%;
 }
 .header ul {
-  display: flex;
+    display: flex;
 }
 .header a {
-  color: var(--dark-main);
-  font-weight: bold;
+    color: var(--dark-main);
+    font-weight: bold;
 }
 .header ul li {
-  padding: 0px 20px;
+    padding: 0px 20px;
 }
 .mobileNav {
-  display: none;
+    display: none;
 }
 .mobileDisplay {
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
 }
 .mobileDisplay li {
-  /* background-color: #00abd6; */
-  /* border: none;
+    /* background-color: #00abd6; */
+    /* border: none;
   padding: 10px 20px;
   color: #fff;
   font-size: 14px;
@@ -46,143 +46,143 @@
   display: block;
   z-index: 3; */
 }
-.mobileList{
-  display: flex;
-  align-items: center;
+.mobileList {
+    display: flex;
+    align-items: center;
 }
-.mobileList li{
-  list-style: none;
+.mobileList li {
+    list-style: none;
 }
 .mobileDisplay a {
-  z-index: 3;
+    z-index: 3;
 }
 .hamburger-menu {
-  width: 20%;
-  z-index: 3;
+    width: 20%;
+    z-index: 3;
 }
 .mobileDisplay a {
-  color: white;
+    color: white;
 }
 .mobileNav ul {
-  text-align: left;
+    text-align: left;
 }
 .mobileMenuContainer {
-  background-color: white;
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  left: 0;
-  top: -120%;
+    background-color: white;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    top: -120%;
 
-  transition: all 0.2s ease-in-out;
-  -webkit-animation: movedown 0.5s linear forwards;
-  -moz-animation: movedown 0.5s linear forwards;
-  -ms-animation: movedown 0.5s linear forwards;
-  -o-animation: movedown 0.5s linear forwards;
-  animation: movedown 0.5s linear forwards;
-  color: black;
-  z-index: 2;
+    transition: all 0.2s ease-in-out;
+    -webkit-animation: movedown 0.5s linear forwards;
+    -moz-animation: movedown 0.5s linear forwards;
+    -ms-animation: movedown 0.5s linear forwards;
+    -o-animation: movedown 0.5s linear forwards;
+    animation: movedown 0.5s linear forwards;
+    color: black;
+    z-index: 2;
 }
 .mobileMenuContainer.opened {
-  top: 86px;
-  transition: all 0.2s ease-in-out;
+    top: 65px;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
 }
 .mobileMenuContainer ul {
-  padding-top: 40px;
-  display: flex;
-  flex-direction: column;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
 }
 .mobileMenuContainer a {
-  font-size: 18px;
-  font-weight: 400;
-  color: black;
-  text-align: left;
-  animation: slidein 0.5s linear forwards;
-  transition: all 0.2s ease-in-out;
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    text-align: left;
+    animation: slidein 0.5s linear forwards;
+    transition: all 0.2s ease-in-out;
 }
-.mobileHeaderData{
-  display: flex;
-  align-items: center;
-  font-size: 13px;
+.mobileHeaderData {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
 }
 
 .hamburgerMenu {
-  background-color: #fff;
+    background-color: #fff;
 
-  border-radius:var(--radius-input);
-  color:var(--main);
-  margin-left: 5px;
-  font-size: 20px;
-  border-radius: var(--radius-input);
-  outline: none;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: 0.5s;
-  z-index: 4;
+    border-radius: var(--radius-input);
+    color: var(--main);
+    margin-left: 5px;
+    font-size: 20px;
+    border-radius: var(--radius-input);
+    outline: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 4;
 }
-.language{
-  position: relative;
+.language {
+    position: relative;
 }
-.languageList{
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 25px;
-  cursor: pointer;
-  background-color: var(--white);
-  width: 100%;
-  border-radius: var(--radius-input);
-  display: none !important;
+.languageList {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 25px;
+    cursor: pointer;
+    background-color: var(--white);
+    width: 100%;
+    border-radius: var(--radius-input);
+    display: none !important;
 }
-.languageListMob{
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 25px;
-  cursor: pointer;
-  background-color: var(--white);
-  border-radius: var(--radius-input);
-  display: none !important;
-  left: -55%;
-  z-index: 999;
+.languageListMob {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 25px;
+    cursor: pointer;
+    background-color: var(--white);
+    border-radius: var(--radius-input);
+    display: none !important;
+    left: -55%;
+    z-index: 999;
 }
 .language:hover .languageList,
-.language:hover .languageListMob{
-  display: block !important;
+.language:hover .languageListMob {
+    display: block !important;
 }
 .languageList li,
-.languageListMob li{
-  border-bottom: 1px solid #efefef;
-  border-radius: var(--radius-input);
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  padding:10px  !important; 
-
+.languageListMob li {
+    border-bottom: 1px solid #efefef;
+    border-radius: var(--radius-input);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 10px !important;
 }
-.languageActive{
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+.languageActive {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 .languageList li:hover,
-.languageListMob li:hover{
-  background-color: #efefef;
+.languageListMob li:hover {
+    background-color: #efefef;
 }
 .languageList img,
 .languageListMob img,
-.languageActive img{
-  width: 25px;
-  margin-right: 5px;
+.languageActive img {
+    width: 25px;
+    margin-right: 5px;
 }
 @media (max-width: 800px) {
-  .mobileNav {
-    display: block;
-  }
-  .desktopHeader{
-    display: none;
-  }
-  .logo {
-    width: 150px;
-  }
+    .mobileNav {
+        display: block;
+    }
+    .desktopHeader {
+        display: none;
+    }
+    .logo {
+        width: 150px;
+    }
 }

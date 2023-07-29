@@ -1,0 +1,19 @@
+.swiperWrapper {
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+    position: relative;
+}
+.sliderPosition img {
+    height: 350px;
+    width: 290px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+@media (max-width: 800px) {
+    .sliderPosition img {
+        margin: auto;
+        display: flex;
+    }
+}

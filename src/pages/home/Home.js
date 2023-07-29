@@ -6,6 +6,7 @@ import HowItWorks from "../../layout/helpers/HowItWorks";
 import FAQ from "../../layout/faq/Faq";
 import { label } from "../../helpers/language";
 import { useSelector } from "react-redux";
+import Slider from "../../components/slider/slider";
 const Home = () => {
   const { lng } = useSelector((state) => state.global);
 
@@ -70,7 +71,9 @@ const Home = () => {
         {/*  <div className="section"> */}
           {/* <SocialMedia /> */}
         {/* </div>*/}
+     
       </div> 
+      <Slider/>
     </>
   );
 };
