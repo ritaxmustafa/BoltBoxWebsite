@@ -45,10 +45,10 @@ function MainModal() {
           {View}
         </div>
         <h1>{label[lng].pickLocation}</h1>
-        {error && <span className="errorMsg">Please choose country</span>}
+        {error && <span className="errorMsg">{label[lng].pickLocation}</span>}
         <div className={style.modalSelect}>
           <CountrySelect selectCountry={selectCountry} />
-          <button onClick={buttonClick}>Vazhdo</button>
+          <button onClick={buttonClick}>{label[lng].continue}</button>
         </div>
       </div>
     </div>

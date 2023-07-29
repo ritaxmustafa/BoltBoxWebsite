@@ -38,8 +38,9 @@ const CreateOrder = () => {
   };
 
   useEffect(() => {
-    //Get steps
+
     client.get("assets").then((response) => {
+      console.log("response", response);
       updatePageprops({ stepOptions: response.data, loading: false });
     });
   }, []);
@@ -88,7 +89,7 @@ const CreateOrder = () => {
             {/* Stepi ku pyetet per no. e kafsheve */}
             {pageProps.currentStep === 1 || !order?.orderInfo?.objectNo ? (
               <SelectModel
-                data={pageProps.stepOptions[pageProps.currentStep]}
+                data={pageProps.stepOptions[1]}
                 step={pageProps.currentStep}
                 updateOrderData={updateOrderData}
                 updateStep={updateStep}
@@ -143,12 +144,15 @@ const CreateOrder = () => {
                       )}
                     </div>
                     {country?.discount > 0 ? (
-                    <h1 className={style.priceTotal}>
-                      {label[lng].price}:<span>{order.price} &euro;</span>  {(order.price - 20).toFixed(2)} &euro;
-                    </h1>) :
-                    (<h1 className={style.priceTotal}>
-                      {label[lng].price}:{order.price} &euro; 
-                    </h1>)}
+                      <h1 className={style.priceTotal}>
+                        {label[lng].price}:<span>{order.price} &euro;</span>{" "}
+                        {(order.price - 20).toFixed(2)} &euro;
+                      </h1>
+                    ) : (
+                      <h1 className={style.priceTotal}>
+                        {label[lng].price}:{order.price} &euro;
+                      </h1>
+                    )}
                     <div>
                       {country?.discount > 0 && (
                         <p className={style.discountText}>

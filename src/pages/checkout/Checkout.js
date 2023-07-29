@@ -83,6 +83,7 @@ const Checkout = () => {
               }}
               validationSchema={checkoutSchema}
               onSubmit={(values, { resetForm }) => {
+
                 setLoading(true);
 
                 if (Object.keys(order.orderInfo).length == 0) {
@@ -102,7 +103,7 @@ const Checkout = () => {
 
                       setLoading(false);
                     } else {
-                      window.open(response.data.url, "_self");
+                      window.location.href = response.data.url;
                     }
                   });
                 }
