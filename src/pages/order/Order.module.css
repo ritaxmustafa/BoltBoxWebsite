@@ -119,13 +119,8 @@
     transition: 0.5s;
     object-fit: contain;
 }
-@media (max-width: 1200px) {
-    .frameWall img {
-        height: 400px;
-    }
-}
 
-@media (max-width: 800px) {
+@media only screen and (max-width: 767px) {
     .orderWrapper {
         padding: 20px;
         padding-top: 30px;
@@ -146,5 +141,8 @@
     }
     .framewhite {
         border: 15px solid #fff;
+    }
+    .frameWall img {
+        height: 100%;
     }
 }

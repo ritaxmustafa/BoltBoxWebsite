@@ -51,4 +51,7 @@
         margin: 20px auto;
         /* margin: auto; */
     }
+    .cardsDisplay img {
+        height: unset;
+    }
 }
