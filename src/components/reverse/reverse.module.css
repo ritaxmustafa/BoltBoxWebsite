@@ -18,6 +18,25 @@
     text-align: left;
     justify-content: space-between;
 }
+.cardsDisplay p {
+    padding-bottom: 20px;
+}
+.cardsDisplay a {
+    background-color: var(--main);
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 10px 30px;
+    border-radius: var(--radius-input);
+    margin-top: 20px;
+    border: 1px solid #21aed0;
+    color: white;
+    transition: 0.3s;
+}
+.cardsDisplay a:hover {
+    border: 1px solid #21aed0;
+    background-color: white;
+    color: #21aed0;
+}
 @media (max-width: 800px) {
     .cardsDisplay {
         flex-direction: column;

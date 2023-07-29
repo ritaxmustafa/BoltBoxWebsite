@@ -1,0 +1,61 @@
+.language {
+    position: relative;
+}
+
+.languageList {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+    background-color: var(--white);
+    width: 100%;
+    left: -10px;
+    border-radius: var(--radius-input);
+    display: none !important;
+}
+.languageHeader {
+    text-align: left;
+    padding-bottom: 20px;
+}
+.languageListMob {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 25px;
+    cursor: pointer;
+    background-color: var(--white);
+    border-radius: var(--radius-input);
+    display: none !important;
+    left: -55%;
+    z-index: 999;
+}
+.language:hover .languageList,
+.language:hover .languageListMob {
+    display: block !important;
+}
+
+.languageList li,
+.languageListMob li {
+    border-bottom: 1px solid #efefef;
+    border-radius: var(--radius-input);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 10px !important;
+}
+.languageActive {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.languageList li:hover,
+.languageListMob li:hover {
+    background-color: #efefef;
+}
+.languageList img,
+.languageListMob img,
+.languageActive img {
+    width: 25px;
+    margin-right: 5px;
+}

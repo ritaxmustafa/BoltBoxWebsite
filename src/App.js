@@ -40,11 +40,18 @@ function App() {
 
   return (
     <>
-      {loading && <Loader />}
-      <Header />
-      <RouteConfig />
-      <Footer />
-      {showComponent() && <MainModal />}
+      {!loading ? (
+        <>
+          <Header />
+          <RouteConfig />
+          <Footer />
+          {showComponent() && <MainModal />}
+          
+        </>
+      ) : (
+        <Loader />
+
+      )}
     </>
   );
 }

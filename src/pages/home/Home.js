@@ -52,7 +52,7 @@ const Home = () => {
           >
             <h1>{label[lng].furryFriend}</h1>
             <p>{label[lng].furryFriendDesc}  </p>
-            <Link to="">{label[lng].paintPet}</Link>
+            <Link to="/order">{label[lng].paintPet}</Link>
           </div>
           <div className="grid3">
             {portrait.map((item, index) => {
