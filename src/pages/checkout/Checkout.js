@@ -105,6 +105,7 @@ const Checkout = () => {
                     } else {
                       window.location.href = response.data.url;
                     }
+                    setLoading(false);
                   });
                 }
               }}

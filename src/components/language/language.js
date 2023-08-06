@@ -6,31 +6,26 @@ import { useState } from "react";
 import { RiArrowDropDownFill } from "react-icons/ri";
 // import { setLanguage } from "../../helpers/redux/slice";
 // import { label } from "../../helpers/language";
-const Language = () =>{
-    const dispatch = useDispatch();
-    const [isOpen, setOpen] = useState(false);
-    const { lng } = useSelector((state) => state.global);
-  
-    const language = {
-        eng: { name: "English", img: "eng.png", label: "eng" },
-        alb: { name: "Shqip", img: "alb.png", label: "alb" },
-        deu: { name: "Deutsch", img: "ger.png", label: "deu" },
-      };
-    
-      const changeLanguage = (selectedLanguage) => {
-        dispatch(setLanguage(selectedLanguage));
-      };
-    
-    return (
-           <>
-               <h1 className={style.languageHeader}>Ndryshoni Gjuhen</h1>
-        <div className={style.language}>
-      
+const Language = () => {
+  const dispatch = useDispatch();
+  const [isOpen, setOpen] = useState(false);
+  const { lng } = useSelector((state) => state.global);
+
+  const language = {
+    eng: { name: "English", img: "eng.png", label: "eng" },
+    alb: { name: "Shqip", img: "alb.png", label: "alb" },
+    deu: { name: "Deutsch", img: "ger.png", label: "deu" },
+  };
+
+  const changeLanguage = (selectedLanguage) => {
+    dispatch(setLanguage(selectedLanguage));
+  };
+
+  return (
+    <>
+      <div className={style.language}>
         <div className={style.languageActive}>
-          <img
-            src={`/images/icons/${language[lng].img}`}
-            alt="language"
-          />
+          <img src={`/images/icons/${language[lng].img}`} alt="language" />
           {language[lng].name}
           <RiArrowDropDownFill />
         </div>
@@ -44,8 +39,9 @@ const Language = () =>{
             );
           })}
         </ul>
-      </div></>
-    )
-}
+      </div>
+    </>
+  );
+};
 
-export default Language
+export default Language;

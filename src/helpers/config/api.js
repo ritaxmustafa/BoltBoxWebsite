@@ -1,6 +1,12 @@
 import axios from "axios";
-const restApiUrl = "https://bolt-box.com/api/";
+
+const url = new URL(window.location.href);
+// const fullUrl = url.origin || "https://bolt-box.com/api/";
+
+const fullUrl =  "https://bolt-box.com";
+
+
 export const client = axios.create({
-  baseURL: restApiUrl,
+  baseURL: fullUrl + "/api",
   timeout: 10000,
 });

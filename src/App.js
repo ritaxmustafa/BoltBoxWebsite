@@ -21,10 +21,23 @@ function App() {
     else return false;
   };
 
+  function isValidJSON(jsonString) {
+    try {
+      JSON.parse(jsonString);
+      return true;
+    } catch (error) {
+      localStorage.removeItem("country");
+      return false;
+    }
+  }
+
+
   useEffect(() => {
     let isCountrySelected = localStorage.getItem("country");
     if (isCountrySelected) {
-      dispatch(setCountry(isCountrySelected));
+      if (isValidJSON(isCountrySelected)) {
+        dispatch(setCountry(JSON.parse(isCountrySelected)));
+      } 
     }
     setTimeout(() => {
       setLoading(false);

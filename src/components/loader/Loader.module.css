@@ -6,6 +6,7 @@
   height: 100%;
   background-color: rgba(255, 255, 255, 1);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 99;
@@ -14,4 +15,31 @@
   width: 40%;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+.loader p{
+  position: absolute;
+  bottom: 25%;
+  left: 40%;
+  width: fit-content;
+  /* text-align: center; */
+}
+
+@media (max-width: 1100px) {
+  .loader > div {
+    width: 90%;
+  }
+  .loader p{
+    bottom: 22%;
+    left: 40%;
+  }
+}
+@media (max-width: 600px) {
+  .loader > div {
+    width: 90%;
+  }
+  .loader p{
+    bottom: 21%;
+    left: 35%;
+  }
 }

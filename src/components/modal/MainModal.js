@@ -29,7 +29,8 @@ function MainModal() {
     if (selectedCountry) {
       dispatch(setCountry(selectedCountry));
       //Add country to localstorage
-      localStorage.setItem("country", selectedCountry);
+      localStorage.setItem("country", JSON.stringify(selectedCountry));
+
     } else setError(true);
   };
   const { View } = useLottie(defaultOptions);

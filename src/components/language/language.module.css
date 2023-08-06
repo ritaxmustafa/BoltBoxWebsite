@@ -9,7 +9,7 @@
     top: 10px;
     cursor: pointer;
     background-color: var(--white);
-    width: 100%;
+    width: fit-content;
     left: -10px;
     border-radius: var(--radius-input);
     display: none !important;

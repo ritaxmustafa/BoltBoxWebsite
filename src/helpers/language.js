@@ -68,6 +68,7 @@ export const label = {
     shipping: "Transporti",
     discountTextOrder: "Jemi të kënaqur t'ju informojmë se do të merrni një zbritje prej {{country?.discount}}€ në blerjen tuaj në faqen e pagesës pasi shteti i dërgesës është {country.name}.",
     cityDiscount: "Nëse shteti juaj i dërgesës është {country.name}, ju merrni një zbritje prej {{country?.discount}}€. Kuponi për vendin e ardhshëm po vjen, kështu që sigurohuni të merrni paketën tuaj para se të jetë vonë!"
+    ,wait: "Ju lutem prisni"
   },
   eng: {
     objectNo: "Pets no. in your portrait",
@@ -137,7 +138,8 @@ export const label = {
     shipping: "Shipping",
     discountTextOrder:
       "We are pleased to inform you that you will receive a  {{country?.discount}}€ discount on your purchase at the checkout page since your shipping country is  {country.name}.",
-    cityDiscount: "You get a {{country?.discount}}€ discount if your shipping country is {country.name}. The next country coupon is on the way, so get your package before it's too late!"
+    cityDiscount: "You get a {{country?.discount}}€ discount if your shipping country is {country.name}. The next country coupon is on the way, so get your package before it's too late!",
+    wait: "Please wait"
   },
   deu: {
     objectNo: "Haustier-Nr. in Ihrem Porträt",
@@ -207,6 +209,7 @@ export const label = {
     shipping: "Versand",
     discountTextOrder: "Wir freuen uns, Ihnen mitzuteilen, dass Sie einen Rabatt von {{country?.discount}}€ auf Ihren Einkauf auf der Kassenseite erhalten, da Ihr Versandland {country.name} ist.",
     cityDiscount: "Sie erhalten einen Rabatt von {{country?.discount}}€, wenn Ihr Versandland {country.name} ist. Der nächste Länder-Gutschein ist unterwegs, also sichern Sie sich Ihr Paket, bevor es zu spät ist!"
+    ,wait: "Warten Sie mal"
 
   },
 };

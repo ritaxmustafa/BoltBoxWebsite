@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import loading from "../../helpers/lotties/loading-dog.json";
 import style from "./Loader.module.css";
 import { useLottie } from "lottie-react";
+import { useSelector } from "react-redux";
+import { label } from "../../helpers/language";
 
 function Loader() {
+  const { lng } = useSelector((state) => state.global);
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -15,7 +18,10 @@ function Loader() {
   return (
     <>
       <div className={style.loader}>
-        <div>{View}  </div>
+        <div>
+          {View}
+          <p>{label[lng].wait}</p>
+        </div>
       </div>
     </>
   );
