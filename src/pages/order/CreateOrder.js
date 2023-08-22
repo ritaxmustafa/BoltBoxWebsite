@@ -40,7 +40,6 @@ const CreateOrder = () => {
   useEffect(() => {
 
     client.get("assets").then((response) => {
-      console.log("response", response);
       updatePageprops({ stepOptions: response.data, loading: false });
     });
   }, []);

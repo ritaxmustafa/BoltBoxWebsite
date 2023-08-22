@@ -11,8 +11,11 @@
   justify-content: center;
   z-index: 99;
 }
+.loaderLotti{
+  width: 100%;
+}
 .loader > div {
-  width: 40%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -23,6 +26,11 @@
   left: 40%;
   width: fit-content;
   /* text-align: center; */
+}
+.loader h1{
+  text-align: center;
+  color: #cecece;
+  font-size: 25px;
 }
 
 @media (max-width: 1100px) {

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import loading from "../../helpers/lotties/loading-dog.json";
+import loading from "../../helpers/lotties/loadingWebsite.json";
 import style from "./Loader.module.css";
 import { useLottie } from "lottie-react";
 import { useSelector } from "react-redux";
 import { label } from "../../helpers/language";
 
-function Loader() {
+function Loader({isCheckout = false}) {
   const { lng } = useSelector((state) => state.global);
   const defaultOptions = {
     loop: true,
@@ -18,10 +18,9 @@ function Loader() {
   return (
     <>
       <div className={style.loader}>
-        <div>
-          {View}
-          <p>{label[lng].wait}</p>
-        </div>
+        <div>{View}</div>
+        {isCheckout ? <h1>{label[lng].waitCheckout}  </h1>
+        : <h1>{label[lng].wait}  </h1>}
       </div>
     </>
   );

@@ -28,6 +28,8 @@ const Checkout = () => {
   const [openMobileMenu, setMobileMenu] = useState(false);
   const [uploadImageModal, setUploadImageModal] = useState(false);
   const [validationError, setValidationError] = useState("");
+  const [url, setUrl] = useState("");
+  const [seconds, setSeconds] = useState(10); // Set the initial countdown time
 
   useEffect(() => {
     if (Object.keys(order.orderInfo).length == 0) {
@@ -63,7 +65,23 @@ const Checkout = () => {
   const changeCountry = (selectedCountry) => {
     dispatch(setCountry(selectedCountry));
   };
-  return (
+
+  useEffect(() => {
+    if(url.length !== 0){
+      if (seconds === 0) {
+        window.location.href = url;
+      } else {
+        const interval = setInterval(() => {
+          setSeconds(prevSeconds => prevSeconds - 1);
+        }, 1000);
+  
+        return () => clearInterval(interval);
+      }
+    }
+  }, [seconds, url]);
+
+
+  return url.length == 0 ? (
     <div className={style.checkoutWrapper}>
       {uploadImageModal && (
         <UploadImage closeModal={() => setUploadImageModal(false)} />
@@ -83,7 +101,6 @@ const Checkout = () => {
               }}
               validationSchema={checkoutSchema}
               onSubmit={(values, { resetForm }) => {
-
                 setLoading(true);
 
                 if (Object.keys(order.orderInfo).length == 0) {
@@ -103,9 +120,11 @@ const Checkout = () => {
 
                       setLoading(false);
                     } else {
-                      window.location.href = response.data.url;
+                      setUrl(response.data.url);
                     }
                     setLoading(false);
+                  }).catch(error => {
+                    console.error('Request failed:', error);
                   });
                 }
               }}
@@ -221,8 +240,9 @@ const Checkout = () => {
                   <div>
                     {country.discount > 0 && (
                       <p className={style.discountText}>
-
-                        {label[lng].cityDiscount.replace("{{country?.discount}}", country?.discount).replace("{country.name}", country.name)}
+                        {label[lng].cityDiscount
+                          .replace("{{country?.discount}}", country?.discount)
+                          .replace("{country.name}", country.name)}
                       </p>
                     )}
                   </div>
@@ -327,8 +347,23 @@ const Checkout = () => {
             </div>
           </div>
         ) : (
-          <Loader />
+          <Loader isCheckout={true}/>
         )}
+      </div>
+    </div>
+  ) : (
+    <div className={style.checkoutWrapper}>
+      <div className={`container `}>
+        <div className="grid2">
+          <div className={style.paymentWrapper}>
+            <div className={style.paymentLink}>
+              <h1>One step away!</h1>
+              <p>You will be redirected for online payments for {seconds} seconds. </p>
+              <p>If not, please click this</p> <a href={url} className={style.link}>link</a>
+              <p>Online Payment is done through <a href="https://paysera.com/" target="_blank">Paysera</a></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
