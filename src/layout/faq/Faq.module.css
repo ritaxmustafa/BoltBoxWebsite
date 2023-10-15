@@ -11,7 +11,7 @@
 .question {
     display: flex;
     background-color: white;
-    color: #00abd6;
+    /* color: #00abd6; */
     align-items: center;
     padding: 15px;
     width: 100%;

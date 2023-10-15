@@ -30,7 +30,7 @@ const PaymentMessage = ({ page }) => {
               <h1>BoltBox Team</h1>
               <span>
                 If you haven't received your recipe via email, please let us
-                know at info@bolx-box.com
+                know at info@bolt-box.com
               </span>
             </div>
           </div>

@@ -13,6 +13,7 @@ import Refund from "../pages/privacy/Refund";
 import Collection from "../pages/peekInside/peekInside";
 import OurStory from "../pages/story/story";
 import Contact from "../pages/contact/contact";
+import FAQ from "../layout/faq/Faq";
 
 function RouteConfig() {
   const location = useLocation();
@@ -33,6 +34,7 @@ function RouteConfig() {
       <Route path="/refund" element={<Refund />} />
       <Route path="/*" element={<Home />} />
       <Route path="/theme" element={<Collection />} />
+      <Route path="/faq" element={<FAQ />} />
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/OurStory" element={<OurStory/>} />
     </Routes>

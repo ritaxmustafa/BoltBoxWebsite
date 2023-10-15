@@ -96,7 +96,7 @@ const FAQ = () => {
   }, [activeIndex]);
 
   return (
-    <div className={style.faqBck}>
+    <div className={`container ${style.faqBck}`}>
       <Heading text={"FAQs"} customStyle={"main"} />
       {questions.map((q, index) => (
         <div

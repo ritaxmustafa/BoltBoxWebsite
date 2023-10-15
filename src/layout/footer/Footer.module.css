@@ -5,6 +5,7 @@
 
     border-top: 1px solid rgb(128 128 128);
 }
+
 .footerSection {
     display: flex;
     flex-direction: column;
@@ -12,6 +13,10 @@
 .paymentDisplay {
     display: flex;
     align-items: center;
+}
+.footerHeader {
+    /* width: 80%; */
+    font-size: 20px;
 }
 .paymentDisplay img {
     margin-right: 20px;
@@ -29,8 +34,11 @@
 .footerSection a {
     color: var(--white);
     padding-bottom: 10px;
+    transition: 0.3s;
 }
-
+.footerSection a:hover {
+    color: var(--main);
+}
 @media (max-width: 800px) {
     .footer h1 {
         font-size: 15px;
